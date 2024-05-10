@@ -57,13 +57,13 @@ export const Search = () => {
         <div className="image-container">
         <img src={Man2} alt="Man" />
         <button className="button-on-image">
-         buy
+         Read
         </button>
       </div>
     <div className="image-container">
     <img src={Niggers} alt="Women" />
         <button className="button-on-image">
-         Buy
+         Read
         </button>
         </div>
     </div>      

@@ -1,0 +1,176 @@
+@font-face {
+    font-family: "Sarpanch-Regular";
+    src: url("../../../fonts/Sarpanch-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Sarpanch-Bold";
+    src: url("../../../fonts/Sarpanch-ExtraBold.ttf");
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    background: url("../../../../assets/background/start.gif") no-repeat center center;
+    background-size: cover;
+}
+  
+.name {
+    font-family: "Sarpanch-Bold";
+    color: white;
+    text-transform: uppercase;
+    font-size: 200px;
+}
+  
+.title-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.title {
+    font-family: "Sarpanch-regular";
+    font-size: 20px;
+     
+}
+  
+.main-text {
+    font-size: 35px; 
+    line-height: 43px;
+    padding: 10px 0; 
+    font-family: "Sarpanch-regular";
+    font-weight: 400;
+    text-align: center;
+}
+  
+  .top,
+  .bottom {
+    padding: 10px 0; 
+}
+
+.btn-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+    
+}
+
+button {
+    font-family: Sarpanch-Regular;
+    font-size: 1.5rem;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #FAFAFA;
+    background: #252525;
+    box-shadow: 3px 3px #fafafa;
+    cursor: pointer;
+    margin: 35px 0;
+}
+  
+button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+  
+
+.limited-edition{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    width: 100%;
+    height: 160px;
+    background-color: black;
+}
+
+.limited-text{
+    font-family: Sarpanch-Bold;
+    color: white;
+    font-size: 70px;
+}
+
+.models {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    margin: 0; 
+}
+  
+.image-container {
+    flex: 0 0 50%; 
+    max-width: 50%; 
+    padding: 0; 
+}
+  
+.image-container img {
+    width: 100%; 
+    height: auto; 
+}
+  
+.image-container {
+    position: relative; 
+}
+  
+.button-on-image {
+    position: absolute; 
+    bottom: 10px; 
+    left: 10%; 
+    z-index: 10; 
+}
+  
+.button-on-image:active {
+    transform: translate(1px, 1px); 
+}
+
+.summer-collection {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+    background: url("../../../assets/background/summer-collection.gif") no-repeat center center;
+    background-size: cover;
+    margin-top: -4px;
+    line-height: 60px;
+}
+
+.summer-collection h1{
+    font-family: Sarpanch-Bold;
+    text-transform: uppercase;
+    font-size: 90px;
+    color: white;
+}
+
+.summer-collection p {
+    font-family: Sarpanch-Bold;
+    text-transform: uppercase;
+    font-size: 50px;
+    color: white;
+}
+
+.blog-text {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Sarpanch-Bold;
+    font-size: 70px;
+}
+
+.under-blog{
+    margin-top: 50px;
+}
+.zaglushka{
+    height: 100vh;
+}
+  

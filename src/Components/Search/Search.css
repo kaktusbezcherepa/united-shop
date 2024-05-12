@@ -37,7 +37,10 @@
     font-size: 20px;
      
 }
-  
+
+.catalog{
+    width: 400px;
+}
 .main-text {
     font-size: 35px; 
     line-height: 43px;
@@ -61,7 +64,7 @@
     
 }
 
-button {
+.button-models {
     font-family: Sarpanch-Regular;
     font-size: 1.5rem;
     color: #FAFAFA;
@@ -75,7 +78,7 @@ button {
     margin: 35px 0;
 }
   
-button:active {
+.button-models:active {
     box-shadow: none;
     transform: translate(3px, 3px);
 }
@@ -170,6 +173,110 @@ button:active {
 .under-blog{
     margin-top: 50px;
 }
+
+.prefooter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../../../assets/background/prefooter.png") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 390px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.prefooter-text{
+    text-align: center;
+    font-family: Sarpanch-Regular;
+    font-size: 35px;
+    line-height: 42px;
+    margin-bottom: 100px;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+.input-under-footer-text {
+    margin-top: 20px;
+    border: none;
+    border-bottom: 2px solid #000;
+    outline: none;
+    flex-grow: 1;
+    background-color: transparent;
+    font-size: 20px;
+    font-family: Sarpanch-Regular;
+}
+  
+.arrow-button {
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+    border: none;
+    background: url('../../../assets/icons/arrow.svg') no-repeat center;
+    background-size: contain;
+    width: 40px; 
+    height: 24px;
+    cursor: pointer;
+}
+
+.input-under-footer-text::placeholder{
+    color: black;
+    font-family: Sarpanch-Regular;
+}
+
+
+.container-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    border-bottom: 1px solid black;
+    height: 100px;
+  }
+  
+  .column {
+    font-family: Sarpanch-Regular;
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-top: none;
+    border-right: 1px solid black;
+    text-transform: capitalize;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  
+ 
+  .column:last-child {
+    border-right: none;
+  }
+  
+  
+  .column:last-child {
+    padding-right: 0;
+    border: none;
+}
+
+.return{
+    height: 30px;
+}
+
+.footer-icons{
+    margin-right: 20px;
+}
+
+
+/* .prefooter::after {
+    content: "";
+    display: block;
+    height: 0;
+} */
+  
+
 .zaglushka{
     height: 100vh;
 }

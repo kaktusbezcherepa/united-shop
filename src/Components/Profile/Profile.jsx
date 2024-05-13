@@ -3,7 +3,7 @@
 export const Profile = () => {
   return (
     <h1>
-        РАЗРАБОТКА НАХУЙ
+        profile
     </h1>
     
   )

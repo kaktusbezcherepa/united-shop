@@ -77,6 +77,17 @@
     cursor: pointer;
     margin: 35px 0;
 }
+
+
+.catalog:visited {
+    color: #FAFAFA; 
+}
+
+.catalog:active {
+    color: #FAFAFA; 
+}
+
+
   
 .button-models:active {
     box-shadow: none;
@@ -140,7 +151,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 700px;
+    height: 500px;
     background: url("../../../assets/background/summer-collection.gif") no-repeat center center;
     background-size: cover;
     margin-top: -4px;

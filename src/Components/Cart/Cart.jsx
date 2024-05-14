@@ -1,7 +1,9 @@
 import "./Cart.css"
 
+
+
 export const Cart = () => {
   return (
-    <div>Cart</div>
+    <h1>cart</h1>
   )
 }

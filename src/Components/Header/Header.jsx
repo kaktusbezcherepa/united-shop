@@ -14,6 +14,7 @@ function Header() {
         <div className="search">
           <a><Link to="/"><img className="icons"src={Search} alt="Search" /></Link></a>
         </div>
+        <h1 className='center'>asdasdsad</h1>
         <div className="icon-group">
           <a><Link to="/cart"><img className="icons" src={Cart} alt="Cart" /></Link></a>
           <a><Link to="/favorites"><img className="icons"src={Fav} alt="Favorites" /></Link></a>

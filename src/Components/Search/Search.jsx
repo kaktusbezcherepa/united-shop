@@ -7,6 +7,7 @@ import Delivery from "../../../assets/icons/delivery.svg"
 import Return from "../../../assets/icons/return.svg"
 import Secure from "../../../assets/icons/secure.svg"
 import Tracking from "../../../assets/icons/tracking.svg"
+import { Link } from "react-router-dom"
 
 
 export const Search = () => {
@@ -26,9 +27,10 @@ export const Search = () => {
           </div>
       </div>
       <div className="btn-container">
-            <button className="button-models catalog">
+      <Link to="/catalog" ><button className="button-models catalog">
              Catalog
             </button>
+             </Link>
       </div>
 
       <div className="limited-edition">
@@ -38,15 +40,17 @@ export const Search = () => {
       <div className="models">
         <div className="image-container">
         <img src={Man} alt="Man" />
-        <button className="button-on-image button-models">
+        <Link to="/catalog/men" ><button className="button-on-image button-models">
          buy
         </button>
+        </Link>
       </div>
   <div className="image-container">
     <img src={Women} alt="Women" />
-        <button className="button-on-image button-models">
+        <Link to="/catalog/woman" ><button className="button-on-image button-models">
          Buy
         </button>
+        </Link>
         </div>
     </div>
 
@@ -88,8 +92,6 @@ export const Search = () => {
         <div className="column"><img src={Secure} className="footer-icons" />SECURE CHECKOUT</div>
         <div className="column"><img src={Tracking} className="footer-icons" />ORDER TRACKING</div>
     </div>
-
-
 
       <div className="zaglushka"></div>
     </>

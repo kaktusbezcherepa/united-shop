@@ -8,51 +8,40 @@
   src: url("../../../fonts/Sarpanch-ExtraBold.ttf");
 }
 
-.footer {
-  background-color: #f9f9f9;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
+footer {
+  background-color: #f2f2f2;
+  padding: 100px 0;
+  font-family: "Sarpanch-Regular"; 
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 150px;
 }
 
-.col {
-  flex-basis: calc(33.33% - 20px);
-  margin: 10px;
+.column1 {
+  flex-basis: 20%;
 }
 
-h5 {
-  margin-top: 0;
+.column1 h2 {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "Sarpanch-Bold"; 
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.column2, .column3, .column4 {
+  flex-basis: 20%;
 }
 
-li {
-  margin-bottom: 10px;
-}
-
-a {
-  text-decoration: none;
-  color: #337ab7;
-}
-
-a:hover {
-  color: #23527c;
+h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 p {
-  margin-top: 20px;
-  font-size: 12px;
-  color: #666;
+  margin: 10px 0;
 }

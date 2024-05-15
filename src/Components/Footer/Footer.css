@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Sarpanch-Regular";
+  src: url("../../../fonts/Sarpanch-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Sarpanch-Bold";
+  src: url("../../../fonts/Sarpanch-ExtraBold.ttf");
+}
+
+.footer {
+  background-color: #f9f9f9;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col {
+  flex-basis: calc(33.33% - 20px);
+  margin: 10px;
+}
+
+h5 {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+a:hover {
+  color: #23527c;
+}
+
+p {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #666;
+}

@@ -25,6 +25,7 @@ function Footer() {
       <p>unitedclothes@mail.ru</p>
     </div>
   </div>
+  <div className="border"></div>
 </footer>
   );
 };

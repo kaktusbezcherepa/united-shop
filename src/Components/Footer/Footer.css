@@ -9,39 +9,48 @@
 }
 
 footer {
-  background-color: #f2f2f2;
-  padding: 100px 0;
   font-family: "Sarpanch-Regular"; 
+  
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0 150px;
+  /* Убираем justify-content: center; и добавляем justify-content: space-between; */
+  justify-content: center;
+  align-items: flex-start; /* Изменяем align-items на flex-start */
+  height: auto;
+  padding-top: 4%;
+ 
 }
 
 .column1 {
-  flex-basis: 20%;
+  margin-left: 10%;
+  align-self:center;
 }
 
-.column1 h2 {
-  font-size: 32px;
-  font-weight: bold;
-  font-family: "Sarpanch-Bold"; 
+.column1, .column2, .column3, .column4 {
+  /* Добавляем ширину, чтобы колонки равномерно распределились по контейнеру */
+  width: 20%;
+  margin-right: 10%;
 }
 
-.column2, .column3, .column4 {
-  flex-basis: 20%;
+.column4 {
+  margin-right: 0;
 }
 
 h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
+  margin-top: 0;
 }
 
-p {
-  margin: 10px 0;
+p{
+  margin-top: 10px;
+}
+
+.border {
+  width: 100%;
+  border-bottom: 1px solid black;
+  margin-top: 4%;
+}
+
+h2 {
+  font-size: 70px;
 }

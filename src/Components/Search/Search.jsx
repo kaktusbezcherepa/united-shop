@@ -9,9 +9,20 @@ import Secure from "../../../assets/icons/secure.svg"
 import Tracking from "../../../assets/icons/tracking.svg"
 import { Link } from "react-router-dom"
 import Footer from "../Footer/Footer"
-
+import axios from "axios";
 
 export const Search = () => {
+  const handleSendEmail = async () => {
+    try {
+      const email = document.querySelector('.input-under-footer-text').value;
+      await axios.post("/send-email", { to: email });
+      alert("Email sent successfully!");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("Error sending email. Please try again later.");
+    }
+  };
+
   return (
     <>
     <div className="logo">
@@ -82,7 +93,7 @@ export const Search = () => {
         <p>Sign up to our newsletter for all <br /> the latest news & discounts.</p>
         <div className="input-container">
           <input placeholder="E-mail adress" className="input-under-footer-text" type="text" />
-          <button  className="arrow-button"></button>
+          <button onClick={handleSendEmail} className="arrow-button"></button>
         </div>
       </div>
     </div> 
@@ -98,4 +109,3 @@ export const Search = () => {
     </>
   )
 }
-

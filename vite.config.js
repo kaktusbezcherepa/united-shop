@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/send-email': {
-        target: 'http://localhost:5173',
+        target: 'http://localhost:3001',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/send-email/, ''),
       },

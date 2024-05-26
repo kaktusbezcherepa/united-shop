@@ -1,8 +1,13 @@
-import express from 'express'
-import nodemailer from 'nodemailer'
+const express = require('express');
+const cors = require('cors');
+const nodemailer = require('nodemailer');
 
 const app = express();
 const PORT = 3001;
+
+app.use(cors({
+    origin: ['http://localhost:5173']
+}));
 
 app.use(express.json());
 

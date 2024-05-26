@@ -15,8 +15,13 @@ export const Search = () => {
   const handleSendEmail = async () => {
     try {
       const email = document.querySelector('.input-under-footer-text').value;
-      await axios.post("/send-email", { to: email });
-      alert("Email sent successfully!");
+      const response = await axios.post('http://localhost:3001/send-email', { to: email });
+      if (response.status === 200) {
+        alert("Email sent successfully!");
+      } else {
+        console.error("Error sending email:", response);
+        alert("Error sending email. Please try again later.");
+      }
     } catch (error) {
       console.error("Error sending email:", error);
       alert("Error sending email. Please try again later.");

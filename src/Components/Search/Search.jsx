@@ -3,10 +3,7 @@ import Man from "../../../assets/models/model-man.png"
 import Women from "../../../assets/models/model-women.png"
 import Man2 from '../../../assets/models/model-man-2.png'
 import Man3 from "../../../assets/models/model-man-3.png"
-import Delivery from "../../../assets/icons/delivery.svg"
-import Return from "../../../assets/icons/return.svg"
-import Secure from "../../../assets/icons/secure.svg"
-import Tracking from "../../../assets/icons/tracking.svg"
+
 import { Link } from "react-router-dom"
 import Footer from "../Footer/Footer"
 import axios from "axios";
@@ -102,15 +99,8 @@ export const Search = () => {
         </div>
       </div>
     </div> 
-
-    <div className="container-column">
-        <div className="column"><img src={Delivery} className="footer-icons" />FAST DELIVERY </div>
-        <div className="column"><img src={Return} className="return footer-icons"  />FREE RETURNS BLOCK</div>
-        <div className="column"><img src={Secure} className="footer-icons" />SECURE CHECKOUT</div>
-        <div className="column"><img src={Tracking} className="footer-icons" />ORDER TRACKING</div>
-    </div>
       <Footer/>
-      <div className="zaglushka"></div>
+      
     </>
   )
 }

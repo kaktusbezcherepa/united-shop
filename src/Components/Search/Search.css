@@ -19,6 +19,7 @@
 }
   
 .name {
+    margin-top:40px;
     font-family: "Sarpanch-Bold";
     color: white;
     text-transform: uppercase;
@@ -266,7 +267,7 @@
 }
   
   
-  .column:last-child {
+.column:last-child {
     padding-right: 0;
     border: none;
 }

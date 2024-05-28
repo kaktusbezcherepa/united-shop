@@ -1,7 +1,18 @@
+import Delivery from "../../../assets/icons/delivery.svg"
+import Return from "../../../assets/icons/return.svg"
+import Secure from "../../../assets/icons/secure.svg"
+import Tracking from "../../../assets/icons/tracking.svg"
 import './Footer.css'
 
 function Footer() {
   return (
+  <>
+    <div className="container-column">
+        <div className="column"><img src={Delivery} className="footer-icons" />FAST DELIVERY </div>
+        <div className="column"><img src={Return} className="return footer-icons"  />FREE RETURNS BLOCK</div>
+        <div className="column"><img src={Secure} className="footer-icons" />SECURE CHECKOUT</div>
+        <div className="column"><img src={Tracking} className="footer-icons" />ORDER TRACKING</div>
+    </div>
     <footer>
     <div className="container-footer">
       <div className="column1">
@@ -27,6 +38,7 @@ function Footer() {
   </div>
   <div className="border"></div>
 </footer>
+  </>
   );
 }
 

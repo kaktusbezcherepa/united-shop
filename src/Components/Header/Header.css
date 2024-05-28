@@ -8,12 +8,77 @@
     src: url("../../../fonts/Sarpanch-ExtraBold.ttf");
 }
 
+
+.modal-container {
+    position: relative;
+  }
+  
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 400px;
+    height: 80%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease;
+    border: 1px solid black;
+}
+  
+.modal-content {
+    background-color: rgb(219, 255, 229);
+    padding: 20px;
+    flex-grow: 1;
+    animation: slideIn 0.3s ease;
+}
+ 
+
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+  
+@keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+
+
+.exit-button{
+    border: none;
+    background-color: transparent;
+}
+
+.exit-button-size{
+    width: 20px;
+}
+
+.exit-button-size:hover{
+    cursor: pointer;
+}
+
 .container-header {
+    position: fixed;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 60px;
+    z-index: 120;
+    border-bottom: 2px solid black;
 }
   
 .burger-button {

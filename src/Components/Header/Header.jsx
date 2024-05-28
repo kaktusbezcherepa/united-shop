@@ -10,15 +10,22 @@ import './Header.css'
 function Header() {
   return (
     <>
-      <div className="container">
-        <div className="search">
-          <a><Link to="/"><img className="icons"src={Search} alt="Search" /></Link></a>
+        <div className="container-header">
+        <div className="burger-button">
+          <button className="header-button"><img src={Search} alt="Search" /></button>
         </div>
-        <h1 className='center'>asdasdsad</h1>
+        <div className="logo-header">
+          <h1><Link to="/">united</Link></h1>
+        </div>
+        <div className="categories-header">
+          <a><Link to={"/catalog/men"}>men</Link></a>
+          <a><Link to={"/catalog/women"}>women</Link></a>
+        </div>
+
         <div className="icon-group">
           <a><Link to="/cart"><img className="icons" src={Cart} alt="Cart" /></Link></a>
-          <a><Link to="/favorites"><img className="icons"src={Fav} alt="Favorites" /></Link></a>
-          <a><Link to="/profile"><img className="icons"src={Profile} alt="Profile" /></Link></a>
+          <a><Link to="/favorites"><img className="icons" src={Fav} alt="Favorites" /></Link></a>
+          <a><Link to="/profile"><img className="icons" src={Profile} alt="Profile" /></Link></a>
         </div>
       </div>
     </>
@@ -27,3 +34,4 @@ function Header() {
 
 
 export default Header
+

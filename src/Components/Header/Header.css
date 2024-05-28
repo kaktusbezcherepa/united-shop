@@ -1,26 +1,92 @@
-.container {
+@font-face {
+    font-family: "Sarpanch-Regular";
+    src: url("../../../fonts/Sarpanch-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Sarpanch-Bold";
+    src: url("../../../fonts/Sarpanch-ExtraBold.ttf");
+}
+
+.container-header {
     display: flex;
-    justify-content: space-between; 
     align-items: center;
+    justify-content: space-between;
     width: 100%;
-    height: 110px;
-  }
+    height: 60px;
+}
   
-.search {
-    padding-left: 70px;
+.burger-button {
+    padding-left: 35px;
+    order: 1;
 }
-
-.icon-group {
+  
+.categories-header {
+    font-family: Sarpanch-regular;
     display: flex;
-    gap: 50px; 
-    padding-right: 70px;
+    order: 3;
+    justify-content: center; 
+    flex-grow: 1; 
+}
+  
+.categories-header a {
+    text-decoration: none;
+    font-size:44px;
+    text-transform: uppercase;
+    margin-right: 20px; 
 }
 
-.icons{
+  .categories-header a:active{
+    color: black;
+}
+
+.categories-header a:visited{
+    text-decoration: none;
+    color: black;
+}
+  
+.logo-header {
+    font-family: Sarpanch-Bold;
+    font-size: 25px;
+    margin-left: 30px;
+    text-transform: uppercase;
+    order: 2;
+    flex-grow: -1; 
+}
+  
+.logo-header a {
+    text-decoration: none;
+}
+  
+.logo-header a:active {
+    text-decoration: none;
+    color: black;
+}
+  
+.logo-header a:visited {
+    color: black;
+}
+  
+.icon-group {
+    order: 4;
+    justify-content: flex-end;
+}
+  
+.icon-group a {
+    margin-right: 15px;
+}
+  
+.icons {
     height: 30px;
 }
 
-.center{
-    padding-left: 180px;
+.header-button{
+    padding-top: 7px;
+    background-color: white;
+    border: none;
+}
+
+.header-button:hover{
+    cursor: pointer;
 }
   

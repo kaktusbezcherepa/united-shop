@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Components/Header/Header';
@@ -38,7 +37,7 @@ export const App = () => {
         <Route path="/catalog/woman" element={<CatalogForWoman />} />
       </Routes>
       {/* Кнопка для отправки электронной почты */}
-      <button onClick={sendEmail}>Send Email</button>
     </div>
   );
 };
+

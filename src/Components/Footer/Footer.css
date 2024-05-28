@@ -9,39 +9,35 @@
 }
 
 footer {
-  font-family: "Sarpanch-Regular"; 
-  
+  font-family: "Sarpanch-Regular";
 }
 
-.container {
-  /* Убираем justify-content: center; и добавляем justify-content: space-between; */
+.container-footer {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: flex-start; /* Изменяем align-items на flex-start */
+  align-items: flex-start;
   height: auto;
   padding-top: 4%;
- 
 }
 
-.column1 {
-  margin-left: 10%;
-  align-self:center;
+.column1{
+  width: 30%;
 }
 
-.column1, .column2, .column3, .column4 {
-  /* Добавляем ширину, чтобы колонки равномерно распределились по контейнеру */
-  width: 20%;
-  margin-right: 10%;
+.column2,
+.column3,
+.column4{
+  width: 10%;
+  margin-right: 5%;
 }
 
-.column4 {
-  margin-right: 0;
-}
 
 h3 {
   margin-top: 0;
 }
 
-p{
+p {
   margin-top: 10px;
 }
 

@@ -27,10 +27,11 @@ export const Search = () => {
 
   return (
     <>
+    <div className="test"></div>
     <div className="logo">
         <h1 className="name">united</h1>
     </div>
-
+    
     <div className="title-container">
           <div className="title top">
               <p>II</p>
@@ -61,7 +62,7 @@ export const Search = () => {
       </div>
   <div className="image-container">
     <img src={Women} alt="Women" />
-        <Link to="/catalog/woman" ><button className="button-on-image button-models">
+        <Link to="/catalog/woman"><button className="button-on-image button-models">
          Buy
         </button>
         </Link>

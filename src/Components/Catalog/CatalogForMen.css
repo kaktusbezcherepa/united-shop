@@ -1,0 +1,28 @@
+.summer-collection-men{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 900px;
+    background: url("../../../assets/background/man-collection.png") no-repeat center center;
+    background-size: cover;
+}
+
+.summer-collection-men-text{
+    text-transform: uppercase;
+    font-family: Sarpanch-Bold;
+    color: white;
+    text-align: center;
+}
+
+.summer-collection-men-text h1{
+    font-size: 100px;
+}
+
+.product-list{
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}

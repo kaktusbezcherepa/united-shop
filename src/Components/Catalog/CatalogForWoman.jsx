@@ -1,7 +1,11 @@
-
+import Footer from "../Footer/Footer"
 
 export const CatalogForWoman = () => {
   return (
-    <div>CatalogForWoman</div>
+    <>
+    <div className="test"></div>
+    <Footer />
+    </>
+    
   )
 }

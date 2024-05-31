@@ -26,7 +26,6 @@ export const App = () => {
   return (
     <div>
       <Header />
-      {/* Определение маршрутов */}
       <Routes>
         <Route path="/" element={<Search />} />
         <Route path="/cart" element={<Cart />} />
@@ -36,7 +35,6 @@ export const App = () => {
         <Route path="/catalog/men" element={<CatalogForMen />} />
         <Route path="/catalog/woman" element={<CatalogForWoman />} />
       </Routes>
-      {/* Кнопка для отправки электронной почты */}
     </div>
   );
 };

@@ -1,11 +1,8 @@
-@font-face {
-    font-family: "Sarpanch-Regular";
-    src: url("../../../fonts/Sarpanch-Regular.ttf");
-}
 
-@font-face {
-    font-family: "Sarpanch-Bold";
-    src: url("../../../fonts/Sarpanch-ExtraBold.ttf");
+
+.test{
+    width: 100%;
+    height: 60px;
 }
 
 .logo {
@@ -13,13 +10,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 300px;
+    height: 500px;
     background: url("../../../../assets/background/start.gif") no-repeat center center;
     background-size: cover;
 }
   
 .name {
-    margin-top:40px;
     font-family: "Sarpanch-Bold";
     color: white;
     text-transform: uppercase;
@@ -57,7 +53,6 @@
 }
 
 .btn-container {
-    margin-top: 50px;
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -126,7 +121,7 @@
   
 .image-container img {
     width: 100%; 
-    height: 815px; 
+    height: 835px; 
 }
   
 .image-container {
@@ -150,8 +145,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 500px;
-    background: url("../../../assets/background/summer-collection.gif") no-repeat center center;
+    height: 900px;
+    background: url("../../../assets/background/summer-collection.png") no-repeat center center;
     background-size: cover;
     margin-top: -4px;
     line-height: 60px;
@@ -194,7 +189,6 @@
     width: 100%;
     height: 390px;
     border-top: 2px solid black;
-    border-bottom: 2px solid black;
 }
 
 .prefooter-text{

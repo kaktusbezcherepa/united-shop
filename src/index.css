@@ -4,5 +4,13 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Sarpanch-Regular";
+  src: url("../../../fonts/Sarpanch-Regular.ttf");
+}
 
+@font-face {
+  font-family: "Sarpanch-Bold";
+  src: url("../../../fonts/Sarpanch-ExtraBold.ttf");
+}
 

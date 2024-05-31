@@ -17,7 +17,7 @@ let transporter = nodemailer.createTransport({
     secure: true,
     auth: {
         user: 'shopunited2024@mail.ru',
-        pass: 'idhxqWZwiAeQjphgnqvm'
+        pass: '***********************'
     }
 });
 

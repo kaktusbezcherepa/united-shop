@@ -1,10 +1,10 @@
-
+import RegWindow from "../reg/regWindow.jsx"
 
 export const Profile = () => {
   return (
-    <h1>
-        profile
-    </h1>
-    
+    <>
+    <div className="test"></div>
+      <RegWindow/>
+    </>
   )
 }

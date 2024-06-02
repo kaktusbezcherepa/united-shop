@@ -8,6 +8,7 @@ import { Profile } from './Components/Profile/Profile';
 import { Catalog } from './Components/Catalog/Catalog';
 import { CatalogForMen } from './Components/Catalog/CatalogForMen';
 import { CatalogForWoman } from './Components/Catalog/CatalogForWoman';
+import { FavoritesProvider } from './FavContext'; 
 
 export const App = () => {
   // Функция для отправки запроса на сервер для отправки электронной почты
@@ -25,6 +26,7 @@ export const App = () => {
 
   return (
     <div>
+       <FavoritesProvider>
       <Header />
       <Routes>
         <Route path="/" element={<Search />} />
@@ -35,6 +37,7 @@ export const App = () => {
         <Route path="/catalog/men" element={<CatalogForMen />} />
         <Route path="/catalog/woman" element={<CatalogForWoman />} />
       </Routes>
+    </FavoritesProvider>
     </div>
   );
 };

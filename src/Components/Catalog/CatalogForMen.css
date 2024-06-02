@@ -1,3 +1,9 @@
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 .summer-collection-men{
     display: flex;
     align-items: center;
@@ -25,4 +31,30 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 15px;
+}
+
+.filter-container{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.sort-buttons{
+    font-family: Sarpanch-Regular;
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 150px;
+    border: none;
+}
+
+.sort-buttons-price-sort{
+    width: 200px;
+}
+
+.input-filter{
+    font-family: Sarpanch-Regular;
+    border: 2px solid black;
+    text-align: center;
 }

@@ -31,5 +31,4 @@ export const Profile = () => {
         }}>REGISTER</button>
       </div>
     </div>
-  );
-}
+) }

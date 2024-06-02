@@ -39,6 +39,7 @@ function Header() {
           <a><Link to={"/catalog/woman"}>women</Link></a>
         </div>
 
+
         <div className="icon-group">
           <a><Link to="/cart"><img className="icons" src={Cart} alt="Cart" /></Link></a>
           <a><Link to="/favorites"><img className="icons" src={Fav} alt="Favorites" /></Link></a>

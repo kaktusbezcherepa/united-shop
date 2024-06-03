@@ -2,8 +2,8 @@ import { useState, useEffect, useContext } from 'react';
 import "./CatalogForMen.css";
 import Footer from "../Footer/Footer";
 import { FavoritesContext } from '../../FavContext';
-import favIcon from "../../../assets/icons/fav.svg"
-import favoritedIcon from '../../../assets/icons/add-fav.svg'
+import favIcon from "../../../assets/icons/fav.svg";
+import favoritedIcon from '../../../assets/icons/add-fav.svg';
 
 const productsData = [
   { id: 1, name: 'T-short', price: 322, image: '../../../assets/items/Rectangle 20.png', brand: "Rick Owens" },
@@ -20,23 +20,34 @@ export const CatalogForMen = () => {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [brand, setBrand] = useState('');
-  const [filteredProducts, setFilteredProducts] = useState(productsData);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [sortOrder, setSortOrder] = useState('');
   const [showBrands, setShowBrands] = useState(false);
+  const { addFavorite, isFavorite, removeFavorite } = useContext(FavoritesContext);
 
   useEffect(() => {
-    let sortedProducts = [...productsData];
+    const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
+    const filtered = productsData.filter(product => favoritesFromStorage.includes(product.id));
+    setFilteredProducts(filtered);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(filteredProducts.map(product => product.id)));
+  }, [filteredProducts]);
+
+  useEffect(() => {
+    let sortedProducts = [...filteredProducts];
     if (sortOrder === 'asc') {
       sortedProducts.sort((a, b) => a.price - b.price);
     } else if (sortOrder === 'desc') {
       sortedProducts.sort((a, b) => b.price - a.price);
     }
     setFilteredProducts(sortedProducts);
-  }, [sortOrder]);
+  }, [sortOrder, filteredProducts]);
 
   useEffect(() => {
     let filtered = productsData;
-    
+
     if (minPrice) {
       filtered = filtered.filter(product => product.price >= minPrice);
     }
@@ -53,23 +64,30 @@ export const CatalogForMen = () => {
   const handleBrandSearch = () => {
     setShowBrands(!showBrands);
   };
+  
   const resetFilters = () => {
     setMinPrice('');
     setMaxPrice('');
     setBrand('');
     setSortOrder('');
     setShowBrands(false);
-    setFilteredProducts(productsData);
+    const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
+    const filtered = productsData.filter(product => favoritesFromStorage.includes(product.id));
+    setFilteredProducts(filtered);
   };
+  
   const toggleFavorite = (product) => {
     if (isFavorite(product.id)) {
       removeFavorite(product.id);
+      const updatedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]').filter(id => id !== product.id);
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
     } else {
       addFavorite(product);
+      const updatedFavorites = [...JSON.parse(localStorage.getItem('favorites') || '[]'), product.id];
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
     }
   };
 
-  const { addFavorite, isFavorite,removeFavorite } = useContext(FavoritesContext);
   return (
     <>
       <div className="summer-collection-men">
@@ -106,23 +124,21 @@ export const CatalogForMen = () => {
         <button className="sort-buttons" onClick={resetFilters}>Reset filter</button>
       </div>
       <div className="product-list">
-        
-  {filteredProducts.map(product => (
-    <div key={product.id} className="product-card">
-      <img src={product.image} alt={`Изображение продукта ${product.name}`} />
-      <div className="price-type-product-card">
-      <p>{product.name}</p>
-      <p className='price'>{product.price}$</p>
-      </div>
-      <p className='brand-name'>{product.brand}</p>
-      <button type='button' alt="fav-button" className='fav-button' onClick={() => toggleFavorite(product)}>
-          <img className='fav-icon'  src={isFavorite(product.id) ? favoritedIcon : favIcon} alt="Add to favorites" />
-        </button>
-      </div>
-      
-  ))}
-</div>
-      <Footer />
+        {filteredProducts.map(product => (
+          <div key={product.id} className="product-card">
+            <img src={product.image} alt={`Изображение продукта ${product.name}`} />
+            <div className="price-type-product-card">
+              <p>{product.name}</p>
+              <p className='price'>{product.price}$</p>
+            </div>
+            <p className='brand-name'>{product.brand}</p>
+            <button type='button' alt="fav-button" className='fav-button' onClick={() => toggleFavorite(product)}>
+              <img className='fav-icon' src={isFavorite(product.id) ? favoritedIcon : favIcon} alt="Add to favorites" />
+            </button>
+          </div>
+        ))}
+      </div> 
+      <Footer /> 
     </>
   );
 };

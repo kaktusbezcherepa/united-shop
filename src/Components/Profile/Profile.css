@@ -9,14 +9,61 @@
 }
 
 
+.profile-unreg-main-text{
+  display: flex;
+  justify-content: center;
+}
+
+
+.not-availiable {
+  font-family: Sarpanch-Bold;
+  font-size: 60px;
+  padding-top: 250px;
+}
+
+
+.profile-unreg-icon {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.unreg-button-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.unreg-button{
+  font-family: Sarpanch-Regular;
+  font-size: 30px;
+  background-color: black;
+  color: white;
+  border: none;
+  height: 60px;
+  width: 200px;
+  border-radius: 10px;
+  margin-bottom: 90px;
+}
+
+.unreg-button:hover {
+  cursor: pointer;
+}
+
+
+.exit-icon-profile{
+  width: 20px;
+}
+
+
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #726868;
-    color: #000000;
-    font-family: "Sarpanch-Regular";
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  color: #000000;
+  font-family: "Sarpanch-Regular";
   }
   
   .form-container {
@@ -97,3 +144,4 @@
   .form-container input::placeholder {
     color: #ccc;
   }
+

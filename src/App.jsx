@@ -44,7 +44,7 @@ export const App = () => {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/men" element={<CatalogForMen />} />
         <Route path="/catalog/woman" element={<CatalogForWoman />} />
-        <Route path="/product/:productId" element={<ProductDetails productsData={productsData} />} />
+        <Route path="/catalog/men/product/:productId" element={<ProductDetails productsData={productsData} />} />
       </Routes>
     </FavoritesProvider>
     </div>

@@ -19,39 +19,34 @@ export const CatalogForMen = () => {
 
   useEffect(() => {
     const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
-    const filtered = productsData.filter(product => favoritesFromStorage.includes(product.id));
+    let filtered = productsData.filter(product => favoritesFromStorage.includes(product.id));
+  
+    if (minPrice) {
+      filtered = filtered.filter(product => product.price >= Number(minPrice));
+    }
+  
+    if (maxPrice) {
+      filtered = filtered.filter(product => product.price <= Number(maxPrice));
+    }
+  
+    if (brand) {
+      filtered = filtered.filter(product => product.brand.toLowerCase().includes(brand.toLowerCase()));
+    }
+  
+    // Apply sorting only after filtering is done
+    if (sortOrder === 'asc') {
+      filtered.sort((a, b) => a.price - b.price);
+    } else if (sortOrder === 'desc') {
+      filtered.sort((a, b) => b.price - a.price);
+    }
+  
     setFilteredProducts(filtered);
-  }, []);
-
+  }, [minPrice, maxPrice, brand, sortOrder]); // Removed filteredProducts from dependencies
+  
+  // Separate useEffect for syncing favorites to localStorage
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(filteredProducts.map(product => product.id)));
   }, [filteredProducts]);
-
-  useEffect(() => {
-    let sortedProducts = [...filteredProducts];
-    if (sortOrder === 'asc') {
-      sortedProducts.sort((a, b) => a.price - b.price);
-    } else if (sortOrder === 'desc') {
-      sortedProducts.sort((a, b) => b.price - a.price);
-    }
-    setFilteredProducts(sortedProducts);
-  }, [sortOrder, filteredProducts]);
-
-  useEffect(() => {
-    let filtered = productsData;
-
-    if (minPrice) {
-      filtered = filtered.filter(product => product.price >= minPrice);
-    }
-
-    if (maxPrice) {
-      filtered = filtered.filter(product => product.price <= maxPrice);
-    }
-    if(brand){
-      filtered = filtered.filter(product => product.brand.toLowerCase().includes(brand.toLowerCase()));
-    }
-    setFilteredProducts(filtered);
-  }, [minPrice, maxPrice, brand]);
 
   const handleBrandSearch = () => {
     setShowBrands(!showBrands);

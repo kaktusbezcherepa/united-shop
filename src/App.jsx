@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Components/Header/Header';
 import { Fav } from './Components/Fav/Fav';
@@ -9,6 +10,8 @@ import { Catalog } from './Components/Catalog/Catalog';
 import { CatalogForMen } from './Components/Catalog/CatalogForMen';
 import { CatalogForWoman } from './Components/Catalog/CatalogForWoman';
 import { FavoritesProvider } from './FavContext'; 
+import  ProductDetails from "./Components/ProductCard/ProductDetails"
+import { productsData } from './productsData';
 
 export const App = () => {
   // Функция для отправки запроса на сервер для отправки электронной почты
@@ -22,7 +25,12 @@ export const App = () => {
     } catch (error) {
       console.error('Error sending email:', error);
     }
+
   };
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div>
@@ -36,6 +44,7 @@ export const App = () => {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/men" element={<CatalogForMen />} />
         <Route path="/catalog/woman" element={<CatalogForWoman />} />
+        <Route path="/product/:productId" element={<ProductDetails productsData={productsData} />} />
       </Routes>
     </FavoritesProvider>
     </div>

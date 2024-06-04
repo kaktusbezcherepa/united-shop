@@ -69,6 +69,12 @@ input[type="number"]::-webkit-outer-spin-button {
     border: 1px solid black;
 }
 
+.link-style,
+.link-style:visited,
+.link-style:hover,
+.link-style:active {
+  text-decoration: none !important;
+}
 
 .fav-icon:hover {
     cursor: pointer;

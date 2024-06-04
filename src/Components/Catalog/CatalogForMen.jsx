@@ -4,17 +4,9 @@ import Footer from "../Footer/Footer";
 import { FavoritesContext } from '../../FavContext';
 import favIcon from "../../../assets/icons/fav.svg";
 import favoritedIcon from '../../../assets/icons/add-fav.svg';
+import { Link } from 'react-router-dom';
+import { productsData } from '../../productsData';
 
-const productsData = [
-  { id: 1, name: 'T-short', price: 322, image: '../../../assets/items/Rectangle 20.png', brand: "Rick Owens" },
-  { id: 2, name: 'Vobla', price: 300, image: '../../../assets/items/Rectangle 20.png', brand: "Number 9" },
-  { id: 3, name: 'Vobla', price: 200, image: '../../../assets/items/Rectangle 20.png', brand: "True Religion" },
-  { id: 4, name: 'Vobla', price: 150, image: '../../../assets/items/Rectangle 20.png', brand: "Rick Owens" },
-  { id: 5, name: 'Vobla', price: 100, image: '../../../assets/items/Rectangle 20.png', brand: "Number 9" },
-  { id: 6, name: 'Vobla', price: 555, image: '../../../assets/items/Rectangle 20.png', brand: "Rick Owens" },
-  { id: 7, name: 'Vobla', price: 231, image: '../../../assets/items/Rectangle 20.png', brand: "True Religion" },
-  { id: 8, name: 'Vobla', price: 200, image: '../../../assets/items/Rectangle 20.png', brand: "True Religion" },
-];
 
 export const CatalogForMen = () => {
   const [minPrice, setMinPrice] = useState('');
@@ -126,7 +118,9 @@ export const CatalogForMen = () => {
       <div className="product-list">
         {filteredProducts.map(product => (
           <div key={product.id} className="product-card">
+            <Link to={`/product/${product.id}`} key={product.id}>
             <img src={product.image} alt={`Изображение продукта ${product.name}`} />
+            </Link>
             <div className="price-type-product-card">
               <p>{product.name}</p>
               <p className='price'>{product.price}$</p>
@@ -135,6 +129,7 @@ export const CatalogForMen = () => {
             <button type='button' alt="fav-button" className='fav-button' onClick={() => toggleFavorite(product)}>
               <img className='fav-icon' src={isFavorite(product.id) ? favoritedIcon : favIcon} alt="Add to favorites" />
             </button>
+          
           </div>
         ))}
       </div> 

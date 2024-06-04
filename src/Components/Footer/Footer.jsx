@@ -3,6 +3,7 @@ import Return from "../../../assets/icons/return.svg"
 import Secure from "../../../assets/icons/secure.svg"
 import Tracking from "../../../assets/icons/tracking.svg"
 import './Footer.css'
+import { Link } from "react-router-dom"
 
 function Footer() {
   return (
@@ -20,7 +21,7 @@ function Footer() {
     </div>
     <div className="column2">
       <h3>SUPPORT</h3>
-      <p>Help & Contact us</p>
+      <p><Link to={"/test"}>Help & Contact us</Link></p>
       <p>Return & Refunds</p>
       <p>Privacy Police</p>
       <p>FAQ</p>

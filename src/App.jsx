@@ -12,6 +12,8 @@ import { CatalogForWoman } from './Components/Catalog/CatalogForWoman';
 import { FavoritesProvider } from './FavContext'; 
 import  ProductDetails from "./Components/ProductCard/ProductDetails"
 import { productsData } from './productsData';
+import Test from './Components/test/test';
+
 
 export const App = () => {
   // Функция для отправки запроса на сервер для отправки электронной почты
@@ -45,6 +47,7 @@ export const App = () => {
         <Route path="/catalog/men" element={<CatalogForMen />} />
         <Route path="/catalog/woman" element={<CatalogForWoman />} />
         <Route path="/catalog/men/product/:productId" element={<ProductDetails productsData={productsData} />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </FavoritesProvider>
     </div>

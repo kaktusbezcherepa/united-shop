@@ -8,11 +8,13 @@ const ProductDetails = ({ productsData }) => {
   const product = productsData.find(p => p.id === parseInt(productId));
  
   return (
+    <>
     <div>
       <h1>{product.name}</h1>
       <p>Price: {product.price}$</p>
       <p>Brand: {product.brand}</p>
     </div>
+    </>
   );
 };
 

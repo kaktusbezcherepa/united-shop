@@ -124,7 +124,6 @@ export const CatalogForMen = () => {
             <button type='button' alt="fav-button" className='fav-button' onClick={() => toggleFavorite(product)}>
               <img className='fav-icon' src={isFavorite(product.id) ? favoritedIcon : favIcon} alt="Add to favorites" />
             </button>
-          
           </div>
         ))}
       </div> 

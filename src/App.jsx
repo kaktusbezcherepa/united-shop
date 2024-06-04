@@ -7,7 +7,7 @@ import { Search } from './Components/Search/Search';
 import { Cart } from './Components/Cart/Cart';
 import { Profile } from './Components/Profile/Profile';
 import { Catalog } from './Components/Catalog/Catalog';
-import { CatalogForMen } from './Components/Catalog/CatalogForMen';
+import  CatalogForMen  from './Components/Catalog/CatalogForMen';
 import { CatalogForWoman } from './Components/Catalog/CatalogForWoman';
 import { FavoritesProvider } from './FavContext'; 
 import  ProductDetails from "./Components/ProductCard/ProductDetails"

@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import  { useState, useEffect, useContext } from 'react';
 import "./CatalogForMen.css";
 import Footer from "../Footer/Footer";
 import { FavoritesContext } from '../../FavContext';
@@ -7,71 +7,62 @@ import favoritedIcon from '../../../assets/icons/add-fav.svg';
 import { Link } from 'react-router-dom';
 import { productsData } from '../../productsData';
 
-
-export const CatalogForMen = () => {
+const CatalogForMen = () => {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [brand, setBrand] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [sortOrder, setSortOrder] = useState('');
-  const [showBrands, setShowBrands] = useState(false);
-  const { addFavorite, isFavorite, removeFavorite } = useContext(FavoritesContext);
+  const [showBrands, setShowBrands] = useState(false); // Добавляем переменную showBrands и функцию setShowBrands
+  const { favorites, addFavorite, isFavorite, removeFavorite } = useContext(FavoritesContext);
 
   useEffect(() => {
-    const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
-    let filtered = productsData.filter(product => favoritesFromStorage.includes(product.id));
-  
-    if (minPrice) {
-      filtered = filtered.filter(product => product.price >= Number(minPrice));
-    }
-  
-    if (maxPrice) {
-      filtered = filtered.filter(product => product.price <= Number(maxPrice));
-    }
-  
-    if (brand) {
-      filtered = filtered.filter(product => product.brand.toLowerCase().includes(brand.toLowerCase()));
-    }
-  
-    // Apply sorting only after filtering is done
-    if (sortOrder === 'asc') {
-      filtered.sort((a, b) => a.price - b.price);
-    } else if (sortOrder === 'desc') {
-      filtered.sort((a, b) => b.price - a.price);
-    }
-  
+    const applyFilters = (products) => {
+      let filtered = [...products];
+
+      if (minPrice) {
+        filtered = filtered.filter(product => product.price >= Number(minPrice));
+      }
+
+      if (maxPrice) {
+        filtered = filtered.filter(product => product.price <= Number(maxPrice));
+      }
+
+      if (brand) {
+        filtered = filtered.filter(product => product.brand.toLowerCase().includes(brand.toLowerCase()));
+      }
+
+      if (sortOrder === 'asc') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortOrder === 'desc') {
+        filtered.sort((a, b) => b.price - a.price);
+      }
+
+      return filtered;
+    };
+
+    const filtered = applyFilters(productsData);
     setFilteredProducts(filtered);
-  }, [minPrice, maxPrice, brand, sortOrder]); // Removed filteredProducts from dependencies
-  
-  // Separate useEffect for syncing favorites to localStorage
-  useEffect(() => {
-    localStorage.setItem('favorites', JSON.stringify(filteredProducts.map(product => product.id)));
-  }, [filteredProducts]);
+  }, [minPrice, maxPrice, brand, sortOrder, favorites]);
 
   const handleBrandSearch = () => {
     setShowBrands(!showBrands);
   };
-  
+
   const resetFilters = () => {
     setMinPrice('');
     setMaxPrice('');
     setBrand('');
     setSortOrder('');
     setShowBrands(false);
-    const favoritesFromStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
-    const filtered = productsData.filter(product => favoritesFromStorage.includes(product.id));
-    setFilteredProducts(filtered);
+    setFilteredProducts(productsData);
   };
-  
+
   const toggleFavorite = (product) => {
     if (isFavorite(product.id)) {
       removeFavorite(product.id);
-      const updatedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]').filter(id => id !== product.id);
-      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
     } else {
       addFavorite(product);
-      const updatedFavorites = [...JSON.parse(localStorage.getItem('favorites') || '[]'), product.id];
-      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
     }
   };
 
@@ -113,21 +104,23 @@ export const CatalogForMen = () => {
       <div className="product-list">
         {filteredProducts.map(product => (
           <div key={product.id} className="product-card">
-            <Link to={`/product/${product.id}`} key={product.id}>
-            <img src={product.image} alt={`Изображение продукта ${product.name}`} />
+            <Link to={`/catalog/men/product/${product.id}`}>
+              <img src={product.image} alt={`Изображение продукта ${product.name}`} />
             </Link>
             <div className="price-type-product-card">
               <p>{product.name}</p>
               <p className='price'>{product.price}$</p>
             </div>
             <p className='brand-name'>{product.brand}</p>
-            <button type='button' alt="fav-button" className='fav-button' onClick={() => toggleFavorite(product)}>
+            <button type='button' className='fav-button' onClick={() => toggleFavorite(product)}>
               <img className='fav-icon' src={isFavorite(product.id) ? favoritedIcon : favIcon} alt="Add to favorites" />
             </button>
           </div>
         ))}
-      </div> 
-      <Footer /> 
+      </div>
+      <Footer />
     </>
   );
 };
+
+export default CatalogForMen;

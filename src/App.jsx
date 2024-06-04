@@ -13,6 +13,7 @@ import { CatalogForWoman } from './Components/Catalog/CatalogForWoman';
 import { FavoritesProvider } from './FavContext'; 
 import  ProductDetails from "./Components/ProductCard/ProductDetails"
 import { productsData } from './productsData';
+import { CartProvider } from './CartContext';
 import Test from './Components/test/test';
 
 
@@ -37,20 +38,22 @@ export const App = () => {
 
   return (
     <div>
-       <FavoritesProvider>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Search />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/favorites" element={<Fav />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/catalog/men" element={<CatalogForMen />} />
-        <Route path="/catalog/woman" element={<CatalogForWoman />} />
-        <Route path="/catalog/men/product/:productId" element={<ProductDetails productsData={productsData} />} />
-        <Route path="/test" element={<Test />} />
-      </Routes>
-    </FavoritesProvider>
+      <FavoritesProvider>
+        <CartProvider> 
+          <Header />
+          <Routes>
+            <Route path="/" element={<Search />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/favorites" element={<Fav />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/catalog/men" element={<CatalogForMen />} />
+            <Route path="/catalog/woman" element={<CatalogForWoman />} />
+            <Route path="/catalog/men/product/:productId" element={<ProductDetails productsData={productsData} />} />
+            <Route path="/test" element={<Test />} />
+          </Routes>
+        </CartProvider>
+      </FavoritesProvider>
     </div>
   );
 };

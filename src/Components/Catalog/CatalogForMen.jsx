@@ -6,7 +6,7 @@ import favIcon from "../../../assets/icons/fav.svg";
 import favoritedIcon from '../../../assets/icons/add-fav.svg';
 import { Link } from 'react-router-dom';
 import { productsData } from '../../productsData';
-import { Cart } from '../Cart/Cart';
+import { CartContext } from '../../CartContext';
 
 const CatalogForMen = () => {
   const [minPrice, setMinPrice] = useState('');
@@ -14,13 +14,10 @@ const CatalogForMen = () => {
   const [brand, setBrand] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [sortOrder, setSortOrder] = useState('');
-  const [showBrands, setShowBrands] = useState(false); // Добавляем переменную showBrands и функцию setShowBrands
+  const [showBrands, setShowBrands] = useState(false); 
   const { favorites, addFavorite, isFavorite, removeFavorite } = useContext(FavoritesContext);
-  const [cartItems, setCartItems] = useState([]);
+  const { cart, addCart, isInCart, removeCart } = useContext(CartContext);
 
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]); // Добавление товара в корзину
-  };
 
   useEffect(() => {
     const applyFilters = (products) => {
@@ -49,7 +46,7 @@ const CatalogForMen = () => {
 
     const filtered = applyFilters(productsData);
     setFilteredProducts(filtered);
-  }, [minPrice, maxPrice, brand, sortOrder, favorites]);
+  }, [minPrice, maxPrice, brand, sortOrder, favorites, cart]);
 
   const handleBrandSearch = () => {
     setShowBrands(!showBrands);
@@ -69,6 +66,14 @@ const CatalogForMen = () => {
       removeFavorite(product.id);
     } else {
       addFavorite(product);
+    }
+  };
+
+  const toggleCart = (product) => {
+    if (isInCart(product.id)) {
+      removeCart(product.id);
+    } else {
+      addCart(product);
     }
   };
 
@@ -119,7 +124,7 @@ const CatalogForMen = () => {
             </div>
             <div className="cart-brand">
             <p className='brand-name'>{product.brand}</p>
-            <button className='add-to-cart' onClick={() => addToCart(product)}>Add to cart</button>
+            <button className='add-to-cart' onClick={() => toggleCart(product)}>Add to cart</button>
             </div>
             <button type='button' className='fav-button' onClick={() => toggleFavorite(product)}>
               <img className='fav-icon' src={isFavorite(product.id) ? favoritedIcon : favIcon} alt="Add to favorites" />
@@ -127,7 +132,6 @@ const CatalogForMen = () => {
           </div>
         ))}
       </div>
-      <Cart cartItems={cartItems} />
       <Footer />
     </>
   );

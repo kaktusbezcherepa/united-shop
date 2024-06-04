@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { FavoritesContext } from '../../FavContext'; // Убедитесь, что путь к FavContext корректен
+import "./Fav.css"
 
 export const Fav = () => {
   const { favorites, removeFavorite } = useContext(FavoritesContext);
 
   return (
-    <div>
-      <h1>Избранное</h1>
+    <>
       <div className="favorites-list">
         {favorites.map(product => (
           <div key={product.id} className="favorite-item">
@@ -18,6 +18,6 @@ export const Fav = () => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };

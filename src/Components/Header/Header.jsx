@@ -35,15 +35,15 @@ function Header() {
           <h1><Link to="/">united</Link></h1>
         </div>
         <div className="categories-header">
-          <a><Link to={"/catalog/men"}>men</Link></a>
-          <a><Link to={"/catalog/woman"}>women</Link></a>
+          <Link to={"/catalog/men"}>men</Link>
+          <Link to={"/catalog/woman"}>women</Link>
         </div>
 
 
         <div className="icon-group">
-          <a><Link to="/cart"><img className="icons" src={Cart} alt="Cart" /></Link></a>
-          <a><Link to="/favorites"><img className="icons" src={Fav} alt="Favorites" /></Link></a>
-          <a><Link to="/profile"><img className="icons" src={Profile} alt="Profile" /></Link></a>
+          <Link to="/cart"><img className="icons" src={Cart} alt="Cart" /></Link>
+          <Link to="/favorites"><img className="icons" src={Fav} alt="Favorites" /></Link>
+          <Link to="/profile"><img className="icons" src={Profile} alt="Profile" /></Link>
         </div>
       </div>
     </>

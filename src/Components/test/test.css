@@ -1,63 +1,86 @@
-@font-face {
-    font-family: "Sarpanch-Regular";
-    src: url("../../../fonts/Sarpanch-Regular.ttf");
-}
-  
-  @font-face {
-    font-family: "Sarpanch-Bold";
-    src: url("../../../fonts/Sarpanch-ExtraBold.ttf");
+.profile-my-data {
+  font-family: Sarpanch-Regular;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 72px;
+  padding-top: 25px;
 }
 
+.my-data-text {
+  font-family: Sarpanch-Regular;
+  text-align: center;
+  font-size: 45px;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
 
-.global {
-    font-family: "Sarpanch-Regular";
+.buttons-profile-container {
+  position: absolute;
+  height: 270px;
+  width: 330px;
+  border: 1px solid black;
+  bottom:39%;
+  left: 70px;
+}
+
+.buttons-profile1,
+.buttons-profile2,
+.buttons-profile3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 33.3%;
+  border-bottom: 1px solid black;
 }
 
 
-.profile-info-text {
-    padding-top: 70px;
-    text-align: center;
-    font-family: "Sarpanch-Bold";
-    font-size: 72px;
+.zagla{
+  width: 100%;
+  height: 500px;
 }
 
-.mydata {
-    padding-top: 50px;
-    text-align: center;
-    font-size: 55px;
+.buttons-profile3:last-child {
+  border-bottom: none;
 }
 
-.sidebar {
-    border-collapse: collapse;
-    width: 10%;
-    margin-left: 68px;
-    margin-top: 40px;
-  }
-  
-  .tho, .tdo {
-    text-align: center;
-    padding: 8px;
-    border: 1px solid black;
-    font-size: 25px;
-  }
-  
-  .tho {
-    background-color: #f2f2f2;
-  }
-
-.table-main {
-    display: flex;
-    margin-left: 600px;
-    font-size: 45px;
+.input-fields-container {
+  height: auto;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column; 
 }
 
-.input-main {
-    display: flex;
-    font-size: 30px;
-    margin-left: 800px;
+.input-fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.container-name {
-    display: flex;
-    
+.field-name {
+  display: flex;
+  font-family: Sarpanch-Regular;
+  margin-right: 10px;
+  font-size: 28px;  
+}
+
+.testik {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.input-field {
+  width: 300px;
+  height: 28px;
+}
+
+.male {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }

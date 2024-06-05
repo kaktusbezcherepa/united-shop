@@ -13,7 +13,6 @@ export const Test = () => {
         <div className="buttons-profile3"><p className='profile-swap-win-button'>club card</p></div>
       </div>
 
-
       <div className="testik">
       <div className="input-fields-container">
         <div className="input-fields">
@@ -36,9 +35,14 @@ export const Test = () => {
           <h3 className='field-name'>Password</h3>
           <input className='input-field' type="text" />
         </div> 
-        <div className="male">
-          <h3 className='sex'>Sex</h3> 
+        <div className="input-fields">
+          <h3 className='field-name'>Sex</h3>
+            <div className='sex-varios'>Male</div>
+              <input type="radio" id="Male" name="sex" value="Male" className="custom-radio"></input>
+            <div className='sex-varios'>Female</div>
+              <input type="radio" id="Female" name="sex" value="Female" className="custom-radio"></input>
         </div>
+        <button className='button-save-key'>save</button>
       </div>
       
       </div>

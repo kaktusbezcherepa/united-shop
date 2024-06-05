@@ -1,3 +1,4 @@
+
 .profile-my-data {
   font-family: Sarpanch-Regular;
   text-align: center;
@@ -31,12 +32,15 @@
   align-items: center;
   height: 33.3%;
   border-bottom: 1px solid black;
+  font-size: 40px;
+  font-family: Sarpanch-Regular;
+  text-transform: uppercase;
 }
 
 
 .zagla{
   width: 100%;
-  height: 500px;
+  height: 150px;
 }
 
 .buttons-profile3:last-child {
@@ -83,4 +87,33 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+
+.sex-varios {
+  font-family: Sarpanch-Regular;
+  font-size: 30px;
+}
+
+.button-save-key {
+  font-family: Sarpanch-Regular;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+
+.custom-radio {
+  -webkit-appearance: none; 
+  appearance: none; 
+  width: 20px; 
+  height: 20px; 
+  border-radius: 5px; 
+  background-color: lightgray; 
+  border: 2px solid #ccc; 
+  cursor: pointer; 
+  outline: none;
+}
+
+.custom-radio:checked {
+  background-color: black; 
 }

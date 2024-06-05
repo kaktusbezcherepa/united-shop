@@ -1,4 +1,3 @@
-import Footer from '../Footer/Footer';
 import './test.css';
 
 export const Test = () => {
@@ -51,7 +50,6 @@ export const Test = () => {
 
 
       <div className="zagla"></div>
-      <Footer />
     </>
   );
 };

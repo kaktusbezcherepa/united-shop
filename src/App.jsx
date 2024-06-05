@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 import { Fav } from './Components/Fav/Fav';
 import { Search } from './Components/Search/Search';
 import { Cart } from './Components/Cart/Cart';
@@ -52,6 +53,7 @@ export const App = () => {
             <Route path="/catalog/men/product/:productId" element={<ProductDetails productsData={productsData} />} />
             <Route path="/test" element={<Test />} />
           </Routes>
+          <Footer />
         </CartProvider>
       </FavoritesProvider>
     </div>

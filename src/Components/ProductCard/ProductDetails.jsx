@@ -39,7 +39,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     let timeoutId = setTimeout(() => {
-      setShowSuccessMessageCart(false); // Исправлено имя состояния
+      setShowSuccessMessageCart(false);
     }, 5000);
 
     return () => clearTimeout(timeoutId);
@@ -51,7 +51,7 @@ const ProductDetails = () => {
     }, 5000);
 
     return () => clearTimeout(timeoutId);
-  }, [showFavoriteMessage, product]); // Добавьте product
+  }, [showFavoriteMessage, product]);
  
   return (
     <>

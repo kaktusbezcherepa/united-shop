@@ -1,6 +1,5 @@
 import "./Profile.css"
 import sadEmoji from "../../../assets/icons/sad-emoji.svg"
-import Footer from "../Footer/Footer"
 import Exit from "../../../assets/icons/exit.svg"
 import { useState } from "react"
 
@@ -59,6 +58,5 @@ export const Profile = () => {
         </div>
       )}
       </div>
-      <Footer />
     </>
 ) }

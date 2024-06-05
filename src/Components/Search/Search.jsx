@@ -3,9 +3,7 @@ import Man from "../../../assets/models/model-man.png"
 import Women from "../../../assets/models/model-women.png"
 import Man2 from '../../../assets/models/model-man-2.png'
 import Man3 from "../../../assets/models/model-man-3.png"
-
 import { Link } from "react-router-dom"
-import Footer from "../Footer/Footer"
 import axios from "axios";
 
 export const Search = () => {
@@ -101,8 +99,6 @@ export const Search = () => {
         </div>
       </div>
     </div> 
-      <Footer/>
-      
     </>
   )
 }

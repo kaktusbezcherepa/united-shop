@@ -1,6 +1,6 @@
 import  { useState, useEffect, useContext } from 'react';
 import "./CatalogForMen.css";
-import Footer from "../Footer/Footer";
+
 import { FavoritesContext } from '../../FavContext';
 import favIcon from "../../../assets/icons/fav.svg";
 import favoritedIcon from '../../../assets/icons/add-fav.svg';
@@ -132,7 +132,6 @@ const CatalogForMen = () => {
           </div>
         ))}
       </div>
-      <Footer />
     </>
   );
 };

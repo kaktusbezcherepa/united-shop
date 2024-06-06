@@ -1,0 +1,22 @@
+.zaglushka-orders {
+    width: 100%;
+    height: 200px;
+}
+
+.orders-container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px; 
+}
+
+.main-text-oders {
+    font-family: Sarpanch-Bold;
+    font-size: 40px;
+}
+
+.other-text-oders {
+    font-family: Sarpanch-Regular;
+    font-size: 35px;
+}

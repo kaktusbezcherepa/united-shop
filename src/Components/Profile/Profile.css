@@ -1,26 +1,62 @@
 @font-face {
-    font-family: "Sarpanch-Regular";
-    src: url("../../../fonts/Sarpanch-Regular.ttf");
-}
-  
-  @font-face {
-    font-family: "Sarpanch-Bold";
-    src: url("../../../fonts/Sarpanch-ExtraBold.ttf");
+  font-family: "Sarpanch-Regular";
+  src: url("../../../fonts/Sarpanch-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Sarpanch-Bold";
+  src: url("../../../fonts/Sarpanch-ExtraBold.ttf");
+}
 
-.profile-unreg-main-text{
+.profile-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.exit-icon-profile-button {
+  position: relative;
+  top: 10px;
+  right: -1800px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-unreg-main-text {
   display: flex;
   justify-content: center;
 }
-
 
 .not-availiable {
   font-family: Sarpanch-Bold;
   font-size: 60px;
   padding-top: 250px;
 }
-
 
 .profile-unreg-icon {
   display: flex;
@@ -34,7 +70,7 @@
   justify-content: center;
 }
 
-.unreg-button{
+.unreg-button {
   font-family: Sarpanch-Regular;
   font-size: 30px;
   background-color: black;
@@ -50,11 +86,9 @@
   cursor: pointer;
 }
 
-
-.exit-icon-profile{
-  width: 20px;
+.exit-icon-profile {
+  width: 20px; /* Установите нужные размеры для иконки закрытия */
 }
-
 
 .container {
   position: relative;
@@ -64,84 +98,92 @@
   height: auto;
   color: #000000;
   font-family: "Sarpanch-Regular";
-  }
-  
-  .form-container {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 400px;
-  }
-  
-  .form-container h1 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .form-container div {
-    margin-bottom: 20px;
-  }
-  
-  .form-container label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-container input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .form-container button {
-    background-color: #333;
-    color: #fff;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-  }
-  
-  .form-container button:hover {
-    background-color: #555;
-  }
-  
-  .form-container a {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    color: #333;
-    text-decoration: none;
-  }
-  
-  .form-container a:hover {
-    text-decoration: underline;
-  }
-  
-  .register-button {
-    background-color: #eee;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-  }
-  
-  .register-button:hover {
-    background-color: #ddd;
-  }
-  
-  .form-container .register-button {
-    margin-top: 10px;
-  }
-  
-  .form-container input::placeholder {
-    color: #ccc;
-  }
+}
 
+.form-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-container div {
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-container button {
+  background-color: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.form-container button:hover {
+  background-color: #555;
+}
+
+.form-container a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+}
+
+.register-button {
+  background-color: #eee;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.register-button:hover {
+  background-color: #ddd;
+}
+
+.form-container .register-button {
+  margin-top: 10px;
+}
+
+.form-container input::placeholder {
+  color: #ccc;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

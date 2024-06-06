@@ -9,7 +9,12 @@ export const Cart = () => {
 
   return (
     <>
-    <h1>cart</h1>
+    <div className="test"></div>
+
+    
+
+
+    {/* <h1>cart</h1>
     <div className="cart-list">
       {cart.map(product => (
         <div key={product.id} className="cart-item">
@@ -20,7 +25,7 @@ export const Cart = () => {
             <button onClick={() => removeCart(product.id)}>remove from cart</button> 
         </div>
       ))}
-    </div>
+    </div> */}
     </>
   )
 }

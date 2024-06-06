@@ -1,10 +1,43 @@
-
-
-.favorites-list-added{
+.fav-main-text {
+    font-family: Sarpanch-Regular;
+    text-transform: uppercase;
+    font-size: 45px;
+    text-align: center;
+    padding-top: 40px;
+}
+  
+.favorites-list-added {
+    font-family: Sarpanch-Regular;
     margin: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
+}
+  
+.card-fav-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    color: white;
+    background-color: black;
+}
+  
+.price-name-fav {
+    justify-content: space-between;
+}
+
+.fav-icon-fav {
+    height: 25px;
+}
+
+.add-to-cart-fav{
+    width: 200px;
+}
+
+.cart-brand .add-to-cart-fav {
+    width: 200px;
 }

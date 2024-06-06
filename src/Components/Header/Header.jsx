@@ -35,8 +35,8 @@ function Header() {
           <h1><Link to="/">united</Link></h1>
         </div>
         <div className="categories-header">
-          <Link to={"/catalog/men"}>men</Link>
-          <Link to={"/catalog/woman"}>women</Link>
+          <Link className='men' to={"/catalog/men"}>men</Link>
+          <Link className="women" to={"/catalog/woman"}>women</Link>
         </div>
 
 

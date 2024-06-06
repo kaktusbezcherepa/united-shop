@@ -90,7 +90,7 @@
     font-family: Sarpanch-regular;
     display: flex;
     order: 3;
-    justify-content: center; 
+    justify-content: space-around; 
     flex-grow: 1; 
 }
   
@@ -101,7 +101,9 @@
     margin-right: 20px; 
 }
 
-  .categories-header a:active{
+.men:active,
+.men:hover{
+    text-decoration: underline;
     color: black;
 }
 

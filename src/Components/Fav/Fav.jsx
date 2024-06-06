@@ -3,6 +3,7 @@ import { productsData } from '../../productsData.js';
 import { useContext, useState, useEffect } from 'react';
 import { FavoritesContext } from '../../FavContext.jsx';
 import { CartContext } from '../../CartContext.jsx';
+import Exit from "../../../assets/icons/exit.svg"
 import "./Fav.css";
 
 export const Fav = () => {
@@ -21,7 +22,7 @@ export const Fav = () => {
   const toggleCart = (product) => {
     if (isInCartState) {
       removeCart(product.id);
-      setShowSuccessMessageCart(false); // Hide success message
+      setShowSuccessMessageCart(false); 
       setIsInCartState(false);
     } else {
       addCart(product);
@@ -48,23 +49,29 @@ export const Fav = () => {
 
   return (
     <>
-    <div className="test"></div>
+      <div className="test"></div>
       <h1 className='fav-main-text'>favorites</h1>
-    <div className="product-list-fav">
-      <div className="favorites-list-added">
-        {favorites.map(product => (
-          <div key={product.id} className="favorite-item">
-            <img src={product.image} alt={product.name} />
-            <h3>{product.name}</h3>
-            <p>{product.price}$</p>
-            <p>Brand: {product.brand}</p>
-            <button onClick={() => removeFavorite(product.id)}>remove from fav</button>
-            <button onClick={() => toggleCart(product)}>
-              {isInCartState ? "Remove from cart" : "Add to cart"}
-            </button>
-          </div>
-        ))}
-      </div>
+      <div className="product-list-fav">
+        <div className="favorites-list-added">
+          {favorites.map(product => (
+            <div key={product.id} className="product-card">
+              <img src={product.image} alt={`Изображение продукта ${product.name}`} />
+              <div className="price-type-product-card">
+                <p>{product.name}</p>
+                <p className='price'>{product.price}$</p>
+              </div>
+              <div className="cart-brand">
+                <p className='brand-name'>{product.brand}</p>
+                <button className='add-to-cart-fav' onClick={() => toggleCart(product)}>
+                  {isInCartState ? "Remove from cart" : "Add to cart"}
+                </button>
+              </div>
+              <button type='button' className='fav-button' onClick={() => removeFavorite(product.id)}>
+                <img className='fav-icon-fav' src={Exit} alt="Remove from favorites" />
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
       {showSuccessMessageCart && (
         <div className="success-message">
@@ -73,7 +80,7 @@ export const Fav = () => {
       )}
       {showFavoriteMessage && (
         <div className="success-message">
-         Item added to favorites!
+          Item added to favorites!
         </div>
       )}
     </>

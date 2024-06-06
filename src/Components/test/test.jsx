@@ -53,8 +53,8 @@ export const Test = () => {
       <h2 className='my-data-text'>my data</h2>
       <div className="buttons-profile-container">
         <div className="buttons-profile1"><p className='custom-varrior-button'>my data</p></div>
-        <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/orders"}>orders</Link></p></div>
-        <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/clubcard"}>club card</Link></p></div>
+        <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/orders"} style={{ textDecoration: 'none' }}>orders</Link></p></div>
+        <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/clubcard"} style={{ textDecoration: 'none' }}>club card</Link></p></div>
       </div>
 
       <div className="testik">

@@ -8,9 +8,9 @@ export const Orders = () => {
             <h1 className='profile-my-data'>profile</h1>
             <h2 className='my-data-text'>orders</h2>
                 <div className="buttons-profile-container">
-                <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/test"}>my data</Link></p></div>
+                <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/test"} style={{ textDecoration: 'none' }}>my data</Link></p></div>
                 <div className="buttons-profile2"><p className='custom-varrior-button'>orders</p></div>
-                <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/clubcard"}>club cars</Link></p></div>
+                <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/clubcard"} style={{ textDecoration: 'none' }}>club cars</Link></p></div>
         </div>
         <div className="orders-container">
           <div className="main-text-oders">Threre are no orders</div>

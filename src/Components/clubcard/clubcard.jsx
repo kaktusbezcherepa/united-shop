@@ -8,8 +8,8 @@ export const Clubcard = () => {
             <h1 className='profile-my-data'>profile</h1>
             <h2 className='my-data-text'>club card</h2>
                 <div className="buttons-profile-container">
-                <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/test"}>my data</Link></p></div>
-                <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/orders"}>orders</Link></p></div>
+                <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/test"} style={{ textDecoration: 'none' }}>my data</Link></p></div>
+                <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/orders"} style={{ textDecoration: 'none' }}>orders</Link></p></div>
                 <div className="buttons-profile3"><p className='custom-varrior-button'>club card</p></div>
         </div>
         <div className="clubcard-container">

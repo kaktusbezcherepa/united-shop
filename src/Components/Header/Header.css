@@ -76,13 +76,8 @@
     font-family: Sarpanch-Regular;
     display: flex;
     order: 3;
-<<<<<<< HEAD
     justify-content: space-around; 
     flex-grow: 1; 
-=======
-    justify-content: center;
-    flex-grow: 1;
->>>>>>> 8e6e6b5c26d5ccec8bd9192b515a1030478b87fe
 }
 
 .categories-header a {
@@ -92,13 +87,9 @@
     margin-right: 20px;
 }
 
-<<<<<<< HEAD
 .men:active,
 .men:hover{
     text-decoration: underline;
-=======
-.categories-header a:active {
->>>>>>> 8e6e6b5c26d5ccec8bd9192b515a1030478b87fe
     color: black;
 }
 

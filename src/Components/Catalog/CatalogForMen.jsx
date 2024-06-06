@@ -82,7 +82,7 @@ const CatalogForMen = () => {
       <div className="summer-collection-men">
         <div className="summer-collection-men-text">
           <h1>Summer Collection</h1>
-          <h2>2024</h2>
+          <h2 className='year-god'>2024</h2>
         </div>
       </div>
       <div className="filter-container">

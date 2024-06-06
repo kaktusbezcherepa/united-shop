@@ -21,6 +21,10 @@ input[type="number"]::-webkit-outer-spin-button {
     text-align: center;
 }
 
+.year-god {
+    font-size: 60px;
+}
+
 .summer-collection-men-text h1{
     font-size: 100px;
 }

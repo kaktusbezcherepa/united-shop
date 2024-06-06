@@ -16,6 +16,8 @@ import  ProductDetails from "./Components/ProductCard/ProductDetails"
 import { productsData } from './productsData';
 import { CartProvider } from './CartContext';
 import Test from './Components/test/test';
+import Clubcard from './Components/clubcard/clubcard';
+import Orders from './Components/orders/orders';
 
 
 export const App = () => {
@@ -52,6 +54,8 @@ export const App = () => {
             <Route path="/catalog/woman" element={<CatalogForWoman />} />
             <Route path="/catalog/men/product/:productId" element={<ProductDetails productsData={productsData} />} />
             <Route path="/test" element={<Test />} />
+            <Route path="/clubcard" element={<Clubcard />} />
+            <Route path="/orders" element={<Orders />} />
           </Routes>
           <Footer />
         </CartProvider>

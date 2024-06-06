@@ -24,6 +24,12 @@
   left: 70px;
 }
 
+.buttons-profile-container a:active, .buttons-profile-container a:visited{
+  color: black;
+  text-decoration: none;
+  border-bottom: none;
+ } 
+
 .buttons-profile1,
 .buttons-profile2,
 .buttons-profile3 {
@@ -116,4 +122,10 @@
 
 .custom-radio:checked {
   background-color: black; 
+}
+
+.custom-varrior-button {
+  font-family: Sarpanch-Bold;
+  font-size: 40px;
+  text-transform: uppercase;
 }

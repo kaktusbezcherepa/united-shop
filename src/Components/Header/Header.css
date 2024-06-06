@@ -8,64 +8,50 @@
     src: url("../../../fonts/Sarpanch-ExtraBold.ttf");
 }
 
-
 .modal-container {
     position: relative;
-  }
-  
+}
+
 .modal {
     position: fixed;
     z-index: 1;
-    left: 0;
-    top: 0;
+    left: -400px; /* Начальное положение за пределами экрана */
+    top: 40%;
+    transform: translateY(-50%);
     width: 400px;
     height: 80%;
     overflow: auto;
     display: flex;
     flex-direction: column;
-    animation: fadeIn 0.3s ease;
+    animation: slideIn 0.5s forwards; /* Анимация появления */
     border: 1px solid black;
+    border-radius: 10px;
 }
-  
+
 .modal-content {
     background-color: rgb(219, 255, 229);
     padding: 20px;
     flex-grow: 1;
-    animation: slideIn 0.3s ease;
-}
- 
-
-
-@keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-}
-  
-@keyframes slideIn {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+    border-radius: 10px;
 }
 
-
-
-.exit-button{
+.exit-button {
     border: none;
     background-color: transparent;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.exit-button-size{
+.exit-button-size {
     width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
-
-.exit-button-size:hover{
+.exit-button-size:hover {
     cursor: pointer;
 }
 
@@ -80,80 +66,103 @@
     z-index: 120;
     border-bottom: 2px solid black;
 }
-  
+
 .burger-button {
     padding-left: 35px;
     order: 1;
 }
-  
+
 .categories-header {
-    font-family: Sarpanch-regular;
+    font-family: Sarpanch-Regular;
     display: flex;
     order: 3;
+<<<<<<< HEAD
     justify-content: space-around; 
     flex-grow: 1; 
-}
-  
-.categories-header a {
-    text-decoration: none;
-    font-size:44px;
-    text-transform: uppercase;
-    margin-right: 20px; 
+=======
+    justify-content: center;
+    flex-grow: 1;
+>>>>>>> 8e6e6b5c26d5ccec8bd9192b515a1030478b87fe
 }
 
+.categories-header a {
+    text-decoration: none;
+    font-size: 44px;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
+<<<<<<< HEAD
 .men:active,
 .men:hover{
     text-decoration: underline;
+=======
+.categories-header a:active {
+>>>>>>> 8e6e6b5c26d5ccec8bd9192b515a1030478b87fe
     color: black;
 }
 
-.categories-header a:visited{
+.categories-header a:visited {
     text-decoration: none;
     color: black;
 }
-  
+
 .logo-header {
     font-family: Sarpanch-Bold;
     font-size: 25px;
     margin-left: 30px;
     text-transform: uppercase;
     order: 2;
-    flex-grow: -1; 
+    flex-grow: -1;
 }
-  
+
 .logo-header a {
     text-decoration: none;
 }
-  
+
 .logo-header a:active {
     text-decoration: none;
     color: black;
 }
-  
+
 .logo-header a:visited {
     color: black;
 }
-  
+
 .icon-group {
     order: 4;
     justify-content: flex-end;
 }
-  
+
 .icon-group a {
     margin-right: 30px;
 }
-  
+
 .icons {
     height: 30px;
 }
 
-.header-button{
+.header-button {
     padding-top: 7px;
     background-color: white;
     border: none;
 }
 
-.header-button:hover{
+.header-button:hover {
     cursor: pointer;
 }
 
+@keyframes slideIn {
+    100% {
+        left: 0%; /* Конечное положение по центру экрана */
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        left: 0%; /* Начальное положение по центру экрана */
+    }
+    100% {
+        left: -400px; /* Конечное положение за пределами экрана */
+    }
+}

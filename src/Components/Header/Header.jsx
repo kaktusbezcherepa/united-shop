@@ -43,7 +43,7 @@ function Header() {
         <div className="icon-group">
           <Link to="/cart"><img className="icons" src={Cart} alt="Cart" /></Link>
           <Link to="/favorites"><img className="icons" src={Fav} alt="Favorites" /></Link>
-          <Link to="/profile"><img className="icons" src={Profile} alt="Profile" /></Link>
+          <Link to="/test"><img className="icons" src={Profile} alt="Profile" /></Link>
         </div>
       </div>
     </>

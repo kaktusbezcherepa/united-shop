@@ -83,7 +83,7 @@ const ProductDetails = () => {
           </div>
           <p className='size-table'>FIND YOUR SIZE | MEASUREMENT GUIDE</p>
           <button onClick={() => toggleCart(product)} className={`add-to-cart-card ${isAddedToCart ? 'added' : 'add'}`}>
-                {isAddedToCart ? "added" : "add"} 
+                {isAddedToCart ? "remove from cart" : "add"} 
           </button>
           
           </div>

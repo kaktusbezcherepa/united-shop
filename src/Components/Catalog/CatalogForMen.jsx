@@ -125,19 +125,23 @@ const CatalogForMen = () => {
         </div>
       </div>
       <div className="filter-container">
-        <input className='input-filter'
+        <input
+          className='input-filter'
           min="0"
           type="number"
           placeholder="Min Price"
           value={minPrice}
           onChange={(e) => setMinPrice(e.target.value)}
+          onWheel={(e) => e.target.blur()}
         />
-        <input className='input-filter'
+        <input
+          className='input-filter'
           min="0"
           type="number"
           placeholder="Max Price"
           value={maxPrice}
           onChange={(e) => setMaxPrice(e.target.value)}
+          onWheel={(e) => e.target.blur()}
         />
         <button className="sort-buttons" onClick={handleBrandSearch}>Brand</button>
         {showBrands && (

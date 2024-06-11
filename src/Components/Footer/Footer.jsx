@@ -21,7 +21,7 @@ function Footer() {
     </div>
     <div className="column2">
       <h3>SUPPORT</h3>
-      <p><Link to={"/test"}>Help & Contact us</Link></p>
+      <p><Link to={"/profile"}>Help & Contact us</Link></p>
       <p>Return & Refunds</p>
       <p>Privacy Police</p>
       <p>FAQ</p>

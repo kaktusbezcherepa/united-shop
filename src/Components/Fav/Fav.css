@@ -31,6 +31,7 @@
 }
 
 .fav-icon-fav {
+    cursor: pointer;
     height: 25px;
 }
 

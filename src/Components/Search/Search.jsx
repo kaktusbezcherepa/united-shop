@@ -46,28 +46,16 @@ export const Search = () => {
              </Link>
       </div>
 
-      <div className="limited-edition">
-        <p className="limited-text">LIMITED EDITION</p>
-      </div>
-
       <div className="models">
         <div className="image-container">
         <img src={Man} alt="Man" />
-        <Link to="/catalog/men" ><button className="button-on-image button-models">
-         buy
-        </button>
-        </Link>
       </div>
-  <div className="image-container">
-    <img src={Women} alt="Women" />
-        <Link to="/catalog/woman">
-          <button className="button-on-image button-models">
-         Buy
-        </button>
-        </Link>
+        <div className="image-container">
+          <img src={Women} alt="Women" />
         </div>
-    </div>
-
+        <div className="text-collection-main">limited Collection</div>
+        <div className="text-collection-main">Collection</div>
+        </div>
       <div className="summer-collection">
         <h1>summer</h1> 
         <p>collection</p>

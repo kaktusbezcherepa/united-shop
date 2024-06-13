@@ -13,7 +13,17 @@ input[type="number"]::-webkit-outer-spin-button {
   background: url("../../../assets/background/man-collection.png") no-repeat center center;
   background-size: cover;
 }
-
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
 .summer-collection-men-text {
   text-transform: uppercase;
   font-family: Sarpanch-Bold;
@@ -21,8 +31,33 @@ input[type="number"]::-webkit-outer-spin-button {
   text-align: center;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+@keyframes colorChange {
+  0% {
+    color: white;
+  }
+  50% {
+    color: rgb(127, 255, 255); 
+  }
+  100% {
+    color: white;
+  }
+}
+
 .year-god {
   font-size: 60px;
+  animation: colorChange 5s ease-in-out infinite;
+  animation: pulse 5s infinite alternate;
 }
 
 .summer-collection-men-text h1 {
@@ -43,6 +78,27 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: #f3f3f3;
   border-radius: 5px;
   margin-right: 20px;
+  animation: fadeInUp 0.5s ease forwards;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sort-head {
+  font-family: Sarpanch-Regular;
+  text-align: center;
+}
+
+.filters-head {
+  font-family: Sarpanch-Regular;
+  text-align: center;
 }
 
 .sort-buttons {
@@ -55,12 +111,28 @@ input[type="number"]::-webkit-outer-spin-button {
     cursor: pointer;
 }
 
+.sort-buttons:hover {
+  background-color: rgb(46, 46, 46);
+}
+
 .sort-buttons-price-sort {
+  background-color: white;
+  color: black;
   width: 280px;
 }
 
-.sort-buttons:hover {
-  background-color: #353333;
+.brand-button {
+  text-align: left;
+  border: none;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-family: Sarpanch-Regular;
+  cursor: pointer;
+}
+
+
+.sort-buttons-price-sort:hover {
+  background-color: #cfcbcb;
 }
 
 .input-filter {
@@ -81,18 +153,31 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .product-card {
-    font-size: 23px;
-    font-family: Sarpanch-Regular;
-    background-color: black;
-    color: white;
-    position: relative;
-    border: 1px solid black;
+  font-size: 23px;
+  font-family: Sarpanch-Regular;
+  background-color: black;
+  color: white;
+  position: relative;
+  border: 1px solid black;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
 .product-card img {
   width: 100%;
   height: auto;
   display: block;
+  transition: transform 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+img.fav-icon {
+  width: 30px;
 }
 
 .price-type-product-card {
@@ -152,7 +237,22 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: #f9f9f9;
   border-radius: 5px;
   max-height: 200px;
-  overflow-y: auto;
+  overflow-y: hidden;
+}
+
+.brand-item {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.brand-item:hover {
+  background-color: #ddd;
+}
+
+.brand-item.selected {
+  background-color: #9c9c9c;
+  color: rgb(0, 0, 0);
 }
 
 .brand-list div {

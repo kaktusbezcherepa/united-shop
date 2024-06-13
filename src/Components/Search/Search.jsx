@@ -65,18 +65,25 @@ export const Search = () => {
           </div>
         </div>
       </div>
+      <div className="summer-coll-container">
+        <div className="summer-coll-text">summer</div>
+          <div className="summer-coll-info">
+          <div className="summer-coll-title">2024</div>
+        <button className="summer-coll-button">View collection</button>
+  </div>
+</div>
 
       <div className="blog-text">READ OUR BLOG POSTS</div>
 
-      <div className="models under-blog">
-        <div className="image-container">
+      <div className="under-container-main">
+        <div className="image-container-under">
         <img src={Man2} alt="Man" />
         <button className="button-on-image button-models">
          Read
         </button>
       </div>
-    <div className="image-container">
-    <img src={Man3} alt="men-photo2" />
+      <div className="image-container-under">
+      <img src={Man3} alt="men-photo2" />
         <button className="button-on-image button-models">
          Read
         </button>

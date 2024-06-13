@@ -91,7 +91,7 @@ export const Fav = () => {
                 </button>
               </div>
               <button type='button' className='fav-button' onClick={() => handleRemoveFavorite(product.id)}>
-                <img className='fav-icon-fav' src={Exit} alt="Remove from favorites" />
+                <img id="fav-icon-fav-fav" className='fav-icon-fav' src={Exit} alt="Remove from favorites" />
               </button>
             </div>
           ))}

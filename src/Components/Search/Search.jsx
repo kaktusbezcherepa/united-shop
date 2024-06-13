@@ -52,7 +52,7 @@ export const Search = () => {
         <div className="text-collection">
           <div className="limited">limited</div> 
           <div className="collection"><span className="first-white-letter">C</span>ollection</div>
-          <Link to="/catalog" ><button className="button-models catalog">
+          <Link to="/catalog/men" ><button className="button-models catalog">
        View collection
       </button>
        </Link> 

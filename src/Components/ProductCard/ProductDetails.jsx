@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import { productsData } from '../../productsData.js';
 import { useContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import "./ProductDetails.css"
@@ -8,9 +7,9 @@ import InFav from "../../../assets/icons/add-fav.svg"
 import { FavoritesContext } from '../../FavContext.jsx';
 import { CartContext } from '../../CartContext.jsx';
 
-const ProductDetails = () => {
+const ProductDetails = ({ data }) => {
   const { productId } = useParams();
-  const product = productsData.find(p => p.id === parseInt(productId));
+  const product = data.find(p => p.id === parseInt(productId));
   const { addFavorite, isFavorite, removeFavorite } = useContext(FavoritesContext);
   const { addCart, isInCart, removeCart } = useContext(CartContext); 
   const [isAddedToCart, setIsAddedToCart] = useState(false); 
@@ -103,7 +102,7 @@ const ProductDetails = () => {
 };
 
 ProductDetails.propTypes = {
-  productsData: PropTypes.arrayOf(PropTypes.shape({
+  data: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,

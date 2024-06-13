@@ -32,14 +32,9 @@ function Header() {
       )}
         </div>
         <div className="logo-header">
-          <h1><Link to="/">united</Link></h1>
+          <h1 className='header-name'><Link to="/">united</Link></h1>
         </div>
-        <div className="categories-header">
-          <Link className='men' to={"/catalog/men"}>men</Link>
-          <Link className="women" to={"/catalog/woman"}>women</Link>
-        </div>
-
-
+      
         <div className="icon-group">
           <Link to="/cart"><img className="icons" src={Cart} alt="Cart" /></Link>
           <Link to="/favorites"><img className="icons" src={Fav} alt="Favorites" /></Link>

@@ -158,6 +158,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .product-card {
+  position: relative;
   font-size: 23px;
   font-family: Sarpanch-Regular;
   background-color: black;
@@ -169,8 +170,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .product-card img {
-  width: 100%;
-  height: auto;
+  width: 25vw;
+  height: 60vh;
   display: block;
   transition: transform 0.3s ease;
 }
@@ -198,6 +199,7 @@ img.fav-icon {
   right: 10px;
   background-color: transparent;
   border: none;
+  padding: 0;
 }
 
 .fav-icon {
@@ -271,9 +273,9 @@ img.fav-icon {
 }
 
 img.fav-icon {
-  width: 40px;
+  width: 50px;
+  height: 50px;
 }
-<<<<<<< HEAD
 
 .sticky-filter {
   position: -webkit-sticky;
@@ -285,5 +287,3 @@ img.fav-icon {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
-=======
->>>>>>> 49a4dd7801c0d7327ef48bc9149556ef1f1f7c7e

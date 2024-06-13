@@ -33,10 +33,13 @@
 .fav-icon-fav {
     width: 15px; 
     height: 15px;
-    position: abs;
     top: 5px; 
     right: 5px; 
+}
 
+#fav-icon-fav-fav{
+    height: 30px;
+    width: 30px;
 }
 
 .add-to-cart-fav{

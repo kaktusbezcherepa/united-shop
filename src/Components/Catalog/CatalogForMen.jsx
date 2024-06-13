@@ -4,7 +4,7 @@ import { FavoritesContext } from '../../FavContext';
 import favIcon from "../../../assets/icons/fav.svg";
 import favoritedIcon from '../../../assets/icons/add-fav.svg';
 import { Link } from 'react-router-dom';
-import { productsData } from '../../productsData';
+import { LimitedData } from '../../Data/LimitedData';
 import { CartContext } from '../../CartContext';
 import showFilters from "../../../assets/icons/show-filters.svg";
 import hideFilters from "../../../assets/icons/hide-filters.svg";
@@ -18,17 +18,20 @@ const CatalogForMen = () => {
   const [showBrands, setShowBrands] = useState(false);
   const [showSizes, setShowSizes] = useState(false);
   const [showColors, setShowColors] = useState(false);
+  const [showSex, setShowSex] = useState(false);
   const [showAvailability, setShowAvailability] = useState(false);
   const [showSuccessMessageCart, setShowSuccessMessageCart] = useState(false);
   const [showFavoriteMessage, setShowFavoriteMessage] = useState(false);
   const [showRemoveMessageCart, setShowRemoveMessageCart] = useState(false);
   const [showRemoveFavoriteMessage, setShowRemoveFavoriteMessage] = useState(false);
+  const [selectedSex, setSelectedSex] = useState('');
   const { favorites, addFavorite, isFavorite, removeFavorite } = useContext(FavoritesContext);
   const { cart, addCart, isInCart, removeCart } = useContext(CartContext);
 
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
   const colors = ['Red', 'Blue', 'Green', 'Black', 'White'];
   const availability = ['In stock', 'Out of stock'];
+  const sex = ['FEMALE', "MALE"]
 
   useEffect(() => {
     const applyFilters = (products) => {
@@ -46,6 +49,10 @@ const CatalogForMen = () => {
         filtered = filtered.filter(product => selectedBrands.includes(product.brand));
       }
 
+      if (selectedSex) {
+        filtered = filtered.filter(product => product.sex === selectedSex.toLowerCase());
+      }
+
       if (sortOrder === 'asc') {
         filtered.sort((a, b) => a.price - b.price);
       } else if (sortOrder === 'desc') {
@@ -55,9 +62,9 @@ const CatalogForMen = () => {
       return filtered;
     };
 
-    const filtered = applyFilters(productsData);
+    const filtered = applyFilters(LimitedData);
     setFilteredProducts(filtered);
-  }, [minPrice, maxPrice, selectedBrands, sortOrder, favorites, cart]);
+  }, [minPrice, maxPrice, selectedBrands, sortOrder, favorites, cart, selectedSex]);
 
   const handleBrandSearch = () => {
     setShowBrands(!showBrands);
@@ -77,11 +84,12 @@ const CatalogForMen = () => {
     setMaxPrice('');
     setSelectedBrands([]);
     setSortOrder('');
+    setSelectedSex('');
     setShowBrands(false);
     setShowSizes(false);
     setShowColors(false);
     setShowAvailability(false);
-    setFilteredProducts(productsData);
+    setFilteredProducts(LimitedData);
   };
 
   const toggleFavorite = (product) => {
@@ -174,7 +182,7 @@ const CatalogForMen = () => {
           </button>
           {showBrands && (
             <div className="brand-list">
-              {Array.from(new Set(productsData.map(product => product.brand))).map(brandItem => (
+              {Array.from(new Set(LimitedData.map(product => product.brand))).map(brandItem => (
                 <div
                   key={brandItem}
                   className={selectedBrands.includes(brandItem) ? 'brand-item selected' : 'brand-item'}
@@ -198,6 +206,23 @@ const CatalogForMen = () => {
               ))}
             </div>
           )}
+         <button className="brand-button" onClick={() => setShowSex(!showSex)}>
+            Sex
+            <img className="filters-icon" src={showSex ? hideFilters : showFilters} alt="Toggle Filters" />
+          </button>
+          {showSex && (
+            <div className="brand-list">
+              {sex.map(sexItem => (
+                <div
+                  key={sexItem}
+                  className={selectedSex === sexItem ? 'sex-item selected' : 'sex-item'}
+                  onClick={() => setSelectedSex(sexItem)}
+                >
+                  {sexItem}
+                </div>
+              ))}
+            </div>
+          )} 
           <button className="brand-button" onClick={() => setShowColors(!showColors)}>
             Colors
             <img className="filters-icon" src={showColors ? hideFilters : showFilters} alt="Toggle Filters" />
@@ -229,12 +254,8 @@ const CatalogForMen = () => {
         <div className="product-list">
           {filteredProducts.map(product => (
             <div key={product.id} className="product-card">
-              <Link to={`/catalog/men/product/${product.id}`}>
-<<<<<<< HEAD
+              <Link to={`/limited-catalog/product/${product.id}`}>
                 <img src={product.image} alt={`Product ${product.name}`} className="product-image" />
-=======
-                <img className='product-card-img' src={product.image} alt={`Product ${product.name}`} />
->>>>>>> 49a4dd7801c0d7327ef48bc9149556ef1f1f7c7e
               </Link>
               <div className="price-type-product-card">
                 <p>{product.name}</p>

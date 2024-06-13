@@ -31,10 +31,12 @@
 }
 
 .fav-icon-fav {
-    cursor: pointer;
-    height: 25px;
-    position: absolute;
-}
+    width: 15px; /* Размер иконки */
+    height: 15px;
+    position: abs;
+    top: 5px; /* Отступ от верхнего края кнопки */
+    right: 5px; /* Отступ от правого края кнопки */
+  }
 
 .add-to-cart-fav{
     width: 200px;
@@ -43,3 +45,21 @@
 .cart-brand .add-to-cart-fav {
     width: 200px;
 }
+.product-card {
+    position: relative; /* Для позиционирования иконки удаления */
+  }
+  
+  .fav-button {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0; /* Изначально скрыть иконку удаления */
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .product-card:hover .fav-button {
+    opacity: 1; /* Показать иконку удаления при наведении */
+  }

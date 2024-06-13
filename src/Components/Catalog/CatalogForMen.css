@@ -94,6 +94,9 @@ input[type="number"]::-webkit-outer-spin-button {
   height: auto;
   display: block;
 }
+img.fav-icon {
+  width: 30px;
+}
 
 .price-type-product-card {
   padding: 10px;

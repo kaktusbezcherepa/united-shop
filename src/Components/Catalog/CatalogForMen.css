@@ -91,6 +91,16 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
+.sort-head {
+  font-family: Sarpanch-Regular;
+  text-align: center;
+}
+
+.filters-head {
+  font-family: Sarpanch-Regular;
+  text-align: center;
+}
+
 .sort-buttons {
     font-family: Sarpanch-Regular;
     background-color: black;
@@ -101,12 +111,28 @@ input[type="number"]::-webkit-outer-spin-button {
     cursor: pointer;
 }
 
+.sort-buttons:hover {
+  background-color: rgb(46, 46, 46);
+}
+
 .sort-buttons-price-sort {
+  background-color: white;
+  color: black;
   width: 280px;
 }
 
-.sort-buttons:hover {
-  background-color: #353333;
+.brand-button {
+  text-align: left;
+  border: none;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-family: Sarpanch-Regular;
+  cursor: pointer;
+}
+
+
+.sort-buttons-price-sort:hover {
+  background-color: #cfcbcb;
 }
 
 .input-filter {
@@ -211,7 +237,7 @@ img.fav-icon {
   background-color: #f9f9f9;
   border-radius: 5px;
   max-height: 200px;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .brand-item {
@@ -239,7 +265,6 @@ img.fav-icon {
   background-color: #ddd;
 }
 
-.product-card-img {
-  height: 600vh;
-  width: 60vh;
+img.fav-icon {
+  width: 40px;
 }

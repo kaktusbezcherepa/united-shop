@@ -7,22 +7,27 @@ import { Link } from 'react-router-dom';
 import { productsData } from '../../productsData';
 import { CartContext } from '../../CartContext';
 
-// Импортируем аудиофайл
-import backgroundMusic from '../../../assets/audio/operationSas.mp3';
-
 const CatalogForMen = () => {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
-  const [brand, setBrand] = useState('');
+  const [selectedBrands, setSelectedBrands] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [sortOrder, setSortOrder] = useState('');
   const [showBrands, setShowBrands] = useState(false);
+  const [showSizes, setShowSizes] = useState(false);
+  const [showColors, setShowColors] = useState(false);
+  const [showAvailability, setShowAvailability] = useState(false);
   const [showSuccessMessageCart, setShowSuccessMessageCart] = useState(false);
   const [showFavoriteMessage, setShowFavoriteMessage] = useState(false);
   const [showRemoveMessageCart, setShowRemoveMessageCart] = useState(false);
   const [showRemoveFavoriteMessage, setShowRemoveFavoriteMessage] = useState(false);
   const { favorites, addFavorite, isFavorite, removeFavorite } = useContext(FavoritesContext);
   const { cart, addCart, isInCart, removeCart } = useContext(CartContext);
+
+
+  const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+  const colors = ['Red', 'Blue', 'Green', 'Black', 'White'];
+  const availability = ['In stock', 'Out of stock'];
 
   useEffect(() => {
     const applyFilters = (products) => {
@@ -36,8 +41,8 @@ const CatalogForMen = () => {
         filtered = filtered.filter(product => product.price <= Number(maxPrice));
       }
 
-      if (brand) {
-        filtered = filtered.filter(product => product.brand.toLowerCase().includes(brand.toLowerCase()));
+      if (selectedBrands.length > 0) {
+        filtered = filtered.filter(product => selectedBrands.includes(product.brand));
       }
 
       if (sortOrder === 'asc') {
@@ -51,22 +56,30 @@ const CatalogForMen = () => {
 
     const filtered = applyFilters(productsData);
     setFilteredProducts(filtered);
-  }, [minPrice, maxPrice, brand, sortOrder, favorites, cart]);
+  }, [minPrice, maxPrice, selectedBrands, sortOrder, favorites, cart]);
 
   const handleBrandSearch = () => {
     setShowBrands(!showBrands);
-    // Сбрасываем выбранный бренд при закрытии списка
-    if (!showBrands) {
-      setBrand('');
+  };
+
+  const toggleBrandSelection = (brandItem) => {
+    const index = selectedBrands.indexOf(brandItem);
+    if (index >= 0) {
+      setSelectedBrands(selectedBrands.filter(brand => brand !== brandItem));
+    } else {
+      setSelectedBrands([...selectedBrands, brandItem]);
     }
   };
 
   const resetFilters = () => {
     setMinPrice('');
     setMaxPrice('');
-    setBrand('');
+    setSelectedBrands([]);
     setSortOrder('');
     setShowBrands(false);
+    setShowSizes(false);
+    setShowColors(false);
+    setShowAvailability(false);
     setFilteredProducts(productsData);
   };
 
@@ -89,12 +102,12 @@ const CatalogForMen = () => {
       setShowSuccessMessageCart(true);
     }
   };
-  
+
   useEffect(() => {
     let timeoutId = setTimeout(() => {
       setShowSuccessMessageCart(false);
     }, 2000);
-    
+
     return () => clearTimeout(timeoutId);
   }, [showSuccessMessageCart]);
 
@@ -104,7 +117,7 @@ const CatalogForMen = () => {
     }, 2000);
 
     return () => clearTimeout(timeoutId);
-  }, [showFavoriteMessage]); 
+  }, [showFavoriteMessage]);
 
   useEffect(() => {
     let timeoutId = setTimeout(() => {
@@ -122,18 +135,6 @@ const CatalogForMen = () => {
     return () => clearTimeout(timeoutId);
   }, [showRemoveFavoriteMessage]);
 
-  useEffect(() => {
-    const audio = new Audio(backgroundMusic);
-    audio.volume = 0.5; // Установите громкость по вашему усмотрению
-    audio.loop = true; // Чтобы музыка повторялась автоматически
-    audio.play();
-
-    return () => {
-      audio.pause();
-      audio.currentTime = 0;
-    };
-  }, []);
-
   return (
     <>
       <div className="summer-collection-men">
@@ -144,6 +145,9 @@ const CatalogForMen = () => {
       </div>
       <div className="catalog-layout">
         <div className="filter-container">
+          <h2 className='sort-head'>Sort by</h2>
+          <button className="sort-buttons sort-buttons-price-sort hover-sort" onClick={() => setSortOrder('asc')}>Sort by price (min - high)</button>
+          <button className="sort-buttons sort-buttons-price-sort" onClick={() => setSortOrder('desc')}>Sort by price (high - min)</button>
           <input
             className='input-filter'
             min="0"
@@ -162,22 +166,51 @@ const CatalogForMen = () => {
             onChange={(e) => setMaxPrice(e.target.value)}
             onWheel={(e) => e.target.blur()}
           />
-          <button className="sort-buttons" onClick={handleBrandSearch}>Brand</button>
+          <h2 className='filters-head'>Filters</h2>
+          <button className="brand-button" onClick={handleBrandSearch}>Brand</button>
           {showBrands && (
             <div className="brand-list">
               {Array.from(new Set(productsData.map(product => product.brand))).map(brandItem => (
                 <div
                   key={brandItem}
-                  className={brand === brandItem ? 'brand-item selected' : 'brand-item'}
-                  onClick={() => setBrand(brand === brandItem ? '' : brandItem)}
+                  className={selectedBrands.includes(brandItem) ? 'brand-item selected' : 'brand-item'}
+                  onClick={() => toggleBrandSelection(brandItem)}
                 >
                   {brandItem}
                 </div>
               ))}
             </div>
           )}
-          <button className="sort-buttons sort-buttons-price-sort" onClick={() => setSortOrder('asc')}>Sort by price(min - high)</button>
-          <button className="sort-buttons sort-buttons-price-sort" onClick={() => setSortOrder('desc')}>Sort by price(high - min)</button>
+          <button className='brand-button' onClick={() => setShowSizes(!showSizes)}>Size</button>
+          {showSizes && (
+            <div className="brand-list">
+              {sizes.map(size => (
+                <div key={size} className="size-item">
+                  {size}
+                </div>
+              ))}
+            </div>
+          )}
+          <button className='brand-button' onClick={() => setShowColors(!showColors)}>Colors</button>
+          {showColors && (
+            <div className="brand-list">
+              {colors.map(color => (
+                <div key={color} className="color-item">
+                  {color}
+                </div>
+              ))}
+            </div>
+          )}
+          <button className='brand-button' onClick={() => setShowAvailability(!showAvailability)}>Availability</button>
+          {showAvailability && (
+            <div className="brand-list">
+              {availability.map(item => (
+                <div key={item} className="availability-item">
+                  {item}
+                </div>
+              ))}
+            </div>
+          )}
           <button className="sort-buttons" onClick={resetFilters}>Reset filters</button>
         </div>
         <div className="product-list">
@@ -203,11 +236,7 @@ const CatalogForMen = () => {
           ))}
         </div>
       </div>
-      {showSuccessMessageCart && (
-        <div className="success-message">
-          Item added to cart!
-        </div>
-      )}
+
       {showFavoriteMessage && (
         <div className="success-message">
           Item added to favorites!

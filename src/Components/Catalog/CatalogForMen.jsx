@@ -1,4 +1,4 @@
-import  { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import "./CatalogForMen.css";
 import { FavoritesContext } from '../../FavContext';
 import favIcon from "../../../assets/icons/fav.svg";
@@ -13,14 +13,13 @@ const CatalogForMen = () => {
   const [brand, setBrand] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [sortOrder, setSortOrder] = useState('');
-  const [showBrands, setShowBrands] = useState(false); 
+  const [showBrands, setShowBrands] = useState(false);
   const [showSuccessMessageCart, setShowSuccessMessageCart] = useState(false);
   const [showFavoriteMessage, setShowFavoriteMessage] = useState(false);
   const [showRemoveMessageCart, setShowRemoveMessageCart] = useState(false);
   const [showRemoveFavoriteMessage, setShowRemoveFavoriteMessage] = useState(false);
   const { favorites, addFavorite, isFavorite, removeFavorite } = useContext(FavoritesContext);
   const { cart, addCart, isInCart, removeCart } = useContext(CartContext);
-
 
   useEffect(() => {
     const applyFilters = (products) => {
@@ -124,79 +123,81 @@ const CatalogForMen = () => {
           <h2 className='year-god'>2024</h2>
         </div>
       </div>
-      <div className="filter-container">
-        <input
-          className='input-filter'
-          min="0"
-          type="number"
-          placeholder="Min Price"
-          value={minPrice}
-          onChange={(e) => setMinPrice(e.target.value)}
-          onWheel={(e) => e.target.blur()}
-        />
-        <input
-          className='input-filter'
-          min="0"
-          type="number"
-          placeholder="Max Price"
-          value={maxPrice}
-          onChange={(e) => setMaxPrice(e.target.value)}
-          onWheel={(e) => e.target.blur()}
-        />
-        <button className="sort-buttons" onClick={handleBrandSearch}>Brand</button>
-        {showBrands && (
-          <div className="brand-list">
-            {Array.from(new Set(productsData.map(product => product.brand))).map(brand => (
-              <div key={brand} onClick={() => setBrand(brand)}>
-                {brand}
+      <div className="catalog-layout">
+        <div className="filter-container">
+          <input
+            className='input-filter'
+            min="0"
+            type="number"
+            placeholder="Min Price"
+            value={minPrice}
+            onChange={(e) => setMinPrice(e.target.value)}
+            onWheel={(e) => e.target.blur()}
+          />
+          <input
+            className='input-filter'
+            min="0"
+            type="number"
+            placeholder="Max Price"
+            value={maxPrice}
+            onChange={(e) => setMaxPrice(e.target.value)}
+            onWheel={(e) => e.target.blur()}
+          />
+          <button className="sort-buttons" onClick={handleBrandSearch}>Brand</button>
+          {showBrands && (
+            <div className="brand-list">
+              {Array.from(new Set(productsData.map(product => product.brand))).map(brand => (
+                <div key={brand} onClick={() => setBrand(brand)}>
+                  {brand}
+                </div>
+              ))}
+            </div>
+          )}
+          <button className="sort-buttons sort-buttons-price-sort" onClick={() => setSortOrder('asc')}>Sort by price(min - high)</button>
+          <button className="sort-buttons sort-buttons-price-sort" onClick={() => setSortOrder('desc')}>Sort by price(high - min)</button>
+          <button className="sort-buttons" onClick={resetFilters}>Reset filters</button>
+        </div>
+        <div className="product-list">
+          {filteredProducts.map(product => (
+            <div key={product.id} className="product-card">
+              <Link to={`/catalog/men/product/${product.id}`}>
+                <img src={product.image} alt={`Изображение продукта ${product.name}`} />
+              </Link>
+              <div className="price-type-product-card">
+                <p>{product.name}</p>
+                <p className='price'>{product.price}$</p>
               </div>
-            ))}
-          </div>
-        )}
-        <button className="sort-buttons sort-buttons-price-sort" onClick={() => setSortOrder('asc')}>Sort by price(low - max)</button>
-        <button className="sort-buttons sort-buttons-price-sort" onClick={() => setSortOrder('desc')}>Sort by price(max - low)</button>
-        <button className="sort-buttons" onClick={resetFilters}>Reset filter</button>
-      </div>
-      <div className="product-list">
-        {filteredProducts.map(product => (
-          <div key={product.id} className="product-card">
-            <Link to={`/catalog/men/product/${product.id}`}>
-              <img src={product.image} alt={`Изображение продукта ${product.name}`} />
-            </Link>
-            <div className="price-type-product-card">
-              <p>{product.name}</p>
-              <p className='price'>{product.price}$</p>
+              <div className="cart-brand">
+                <p className='brand-name'>{product.brand}</p>
+                <button className='add-to-cart' onClick={() => toggleCart(product)}>
+                  {isInCart(product.id) ? "Remove from cart" : "Add to cart"}
+                </button>
+              </div>
+              <button type='button' className='fav-button' onClick={() => toggleFavorite(product)}>
+                <img className='fav-icon' src={isFavorite(product.id) ? favoritedIcon : favIcon} alt="Добавить в избранное" />
+              </button>
             </div>
-            <div className="cart-brand">
-            <p className='brand-name'>{product.brand}</p>
-            <button className='add-to-cart' onClick={() => toggleCart(product)}>
-              {isInCart(product.id) ? "Remove from cart" : "Add to cart"}
-            </button>
-            </div>
-            <button type='button' className='fav-button' onClick={() => toggleFavorite(product)}>
-              <img className='fav-icon' src={isFavorite(product.id) ? favoritedIcon : favIcon} alt="Add to favorites" />
-            </button>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       {showSuccessMessageCart && (
         <div className="success-message">
-          Item added to cart
+          item added to cart!
         </div>
       )}
       {showFavoriteMessage && (
         <div className="success-message">
-          Item added to favorites!
+          item added to favorites!
         </div>
       )}
       {showRemoveMessageCart && (
         <div className="success-message">
-          Item removed from cart
+          item removed from cart!
         </div>
       )}
       {showRemoveFavoriteMessage && (
         <div className="success-message">
-          Item removed from favorites
+          item removed from favorites
         </div>
       )}
     </>

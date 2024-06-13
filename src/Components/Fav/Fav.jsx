@@ -86,7 +86,7 @@ export const Fav = () => {
               </div>
               <div className="cart-brand">
                 <p className='brand-name'>{product.brand}</p>
-                <button className='add-to-cart-fav' onClick={() => toggleCart(product)}>
+                <button className='add-to-cart' onClick={() => toggleCart(product)}>
                   {isInCartStates[product.id] ? "Remove from cart" : "Add to cart"}
                 </button>
               </div>

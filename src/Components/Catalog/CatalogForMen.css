@@ -4,72 +4,83 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
-.summer-collection-men{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 900px;
-    background: url("../../../assets/background/man-collection.png") no-repeat center center;
-    background-size: cover;
+.summer-collection-men {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 900px;
+  background: url("../../../assets/background/man-collection.png") no-repeat center center;
+  background-size: cover;
 }
 
-.summer-collection-men-text{
-    text-transform: uppercase;
-    font-family: Sarpanch-Bold;
-    color: white;
-    text-align: center;
+.summer-collection-men-text {
+  text-transform: uppercase;
+  font-family: Sarpanch-Bold;
+  color: white;
+  text-align: center;
 }
 
 .year-god {
-    font-size: 60px;
+  font-size: 60px;
 }
 
-.summer-collection-men-text h1{
-    font-size: 100px;
+.summer-collection-men-text h1 {
+  font-size: 100px;
 }
 
-.product-list{
-    margin: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
+.catalog-layout {
+  display: flex;
+  align-items: flex-start;
+  margin: 30px;
 }
 
-.filter-container{
-    margin: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  margin-right: 20px;
 }
 
-.sort-buttons{
+.sort-buttons {
     font-family: Sarpanch-Regular;
     background-color: black;
     color: white;
     height: 40px;
-    width: 150px;
+    width: 100%;
     border: none;
     cursor: pointer;
 }
 
-.sort-buttons-price-sort{
-    width: 200px;
+.sort-buttons-price-sort {
+  width: 280px;
 }
 
 .sort-buttons:hover {
-    background-color: #353333;
+  background-color: #353333;
 }
 
-.input-filter{
-    font-family: Sarpanch-Regular;
-    border: 2px solid black;
-    text-align: center;
+.input-filter {
+  font-family: Sarpanch-Regular;
+  border: 2px solid black;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
 }
 
-.product-card{
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+.product-card {
     font-size: 23px;
     font-family: Sarpanch-Regular;
     background-color: black;
@@ -78,64 +89,78 @@ input[type="number"]::-webkit-outer-spin-button {
     border: 1px solid black;
 }
 
-.link-style,
-.link-style:visited,
-.link-style:hover,
-.link-style:active {
-  text-decoration: none !important;
+.product-card img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
-
-.fav-icon:hover {
-    cursor: pointer;
-}
-
 
 .price-type-product-card {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-
 
 .fav-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
 }
- 
-.fav-icon{
-    height: 40px;
+
+.fav-icon {
+  height: 20vh;
+  cursor: pointer;
 }
 
 .cart-brand {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
-    height: 50px;
-}
-
-.cart-brand button {
-    font-family: Sarpanch-Regular;
-    font-size: 20px;
-    height: 30px;
-    width: 200px;
-    justify-content: center;
-    border-radius: 3px;
-    border: none;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 .cart-brand p {
-    margin: 0;
+  margin: 0;
 }
 
 .add-to-cart {
-    display: flex;
-    align-items: center;
+    font-family: Sarpanch-Regular;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+
+.add-to-cart:hover {
+  background-color: #777;
+}
+
+.brand-list {
+  font-family: Sarpanch-Regular;  
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.brand-list div {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.brand-list div:hover {
+  background-color: #ddd;
 }

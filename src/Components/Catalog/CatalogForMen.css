@@ -238,3 +238,8 @@ img.fav-icon {
 .brand-list div:hover {
   background-color: #ddd;
 }
+
+.product-card-img {
+  height: 600vh;
+  width: 60vh;
+}

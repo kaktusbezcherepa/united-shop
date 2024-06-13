@@ -184,7 +184,7 @@ const CatalogForMen = () => {
           {filteredProducts.map(product => (
             <div key={product.id} className="product-card">
               <Link to={`/catalog/men/product/${product.id}`}>
-                <img src={product.image} alt={`Product ${product.name}`} />
+                <img className='product-card-img' src={product.image} alt={`Product ${product.name}`} />
               </Link>
               <div className="price-type-product-card">
                 <p>{product.name}</p>

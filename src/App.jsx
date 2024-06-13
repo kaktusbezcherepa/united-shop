@@ -18,6 +18,7 @@ import { CartProvider } from './CartContext';
 import Test from './Components/test/test';
 import Clubcard from './Components/clubcard/clubcard';
 import Orders from './Components/orders/orders';
+import Summercollection from './summercollection/summercollection';
 
 
 export const App = () => {
@@ -56,6 +57,7 @@ export const App = () => {
             <Route path="/test" element={<Test />} />
             <Route path="/clubcard" element={<Clubcard />} />
             <Route path="/orders" element={<Orders />} />
+            <Route path="/summercollection" element={<Summercollection />} />
           </Routes>
           <Footer />
         </CartProvider>

@@ -69,7 +69,7 @@ export const Search = () => {
         <div className="summer-coll-text">summer</div>
           <div className="summer-coll-info">
           <div className="summer-coll-title">2024</div>
-        <button className="summer-coll-button">View collection</button>
+          <Link to="/summercollection" ><button className="summer-coll-button">View collection</button></Link>
   </div>
 </div>
 

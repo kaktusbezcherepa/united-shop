@@ -52,6 +52,10 @@ const CatalogForMen = () => {
 
   const handleBrandSearch = () => {
     setShowBrands(!showBrands);
+    // Сбрасываем выбранный бренд при закрытии списка
+    if (!showBrands) {
+      setBrand('');
+    }
   };
 
   const resetFilters = () => {
@@ -146,9 +150,13 @@ const CatalogForMen = () => {
           <button className="sort-buttons" onClick={handleBrandSearch}>Brand</button>
           {showBrands && (
             <div className="brand-list">
-              {Array.from(new Set(productsData.map(product => product.brand))).map(brand => (
-                <div key={brand} onClick={() => setBrand(brand)}>
-                  {brand}
+              {Array.from(new Set(productsData.map(product => product.brand))).map(brandItem => (
+                <div
+                  key={brandItem}
+                  className={brand === brandItem ? 'brand-item selected' : 'brand-item'}
+                  onClick={() => setBrand(brand === brandItem ? '' : brandItem)}
+                >
+                  {brandItem}
                 </div>
               ))}
             </div>
@@ -161,7 +169,7 @@ const CatalogForMen = () => {
           {filteredProducts.map(product => (
             <div key={product.id} className="product-card">
               <Link to={`/catalog/men/product/${product.id}`}>
-                <img src={product.image} alt={`Изображение продукта ${product.name}`} />
+                <img src={product.image} alt={`Product ${product.name}`} />
               </Link>
               <div className="price-type-product-card">
                 <p>{product.name}</p>
@@ -174,7 +182,7 @@ const CatalogForMen = () => {
                 </button>
               </div>
               <button type='button' className='fav-button' onClick={() => toggleFavorite(product)}>
-                <img className='fav-icon' src={isFavorite(product.id) ? favoritedIcon : favIcon} alt="Добавить в избранное" />
+                <img className='fav-icon' src={isFavorite(product.id) ? favoritedIcon : favIcon} alt="Add to favorites" />
               </button>
             </div>
           ))}
@@ -182,22 +190,22 @@ const CatalogForMen = () => {
       </div>
       {showSuccessMessageCart && (
         <div className="success-message">
-          item added to cart!
+          Item added to cart!
         </div>
       )}
       {showFavoriteMessage && (
         <div className="success-message">
-          item added to favorites!
+          Item added to favorites!
         </div>
       )}
       {showRemoveMessageCart && (
         <div className="success-message">
-          item removed from cart!
+          Item removed from cart!
         </div>
       )}
       {showRemoveFavoriteMessage && (
         <div className="success-message">
-          item removed from favorites
+          Item removed from favorites
         </div>
       )}
     </>

@@ -214,6 +214,21 @@ img.fav-icon {
   overflow-y: auto;
 }
 
+.brand-item {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.brand-item:hover {
+  background-color: #ddd;
+}
+
+.brand-item.selected {
+  background-color: #9c9c9c;
+  color: rgb(0, 0, 0);
+}
+
 .brand-list div {
   cursor: pointer;
   padding: 5px;

@@ -72,14 +72,6 @@ export const Test = () => {
             <input className='input-field' type="text" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleInputChange} />
           </div>
           <div className="input-fields">
-            <h3 className='field-name'>Email</h3>
-            <input className='input-field' type="text" name="email" value={formData.email} onChange={handleInputChange} />
-          </div>
-          <div className="input-fields">
-            <h3 className='field-name'>Password</h3>
-            <input className='input-field' type="text" name="password" value={formData.password} onChange={handleInputChange} />
-          </div> 
-          <div className="input-fields">
             <h3 className='field-name'>Sex</h3>
             <div className='sex-varios'>
               <label>

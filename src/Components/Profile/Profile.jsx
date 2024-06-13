@@ -2,6 +2,7 @@ import "./Profile.css"
 import sadEmoji from "../../../assets/icons/sad-emoji.svg"
 import Exit from "../../../assets/icons/exit.svg"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 
 export const Profile = () => {
@@ -41,15 +42,11 @@ export const Profile = () => {
                     <label htmlFor="password">Password</label>
                     <input type="password" id="password" required />
                   </div>
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      console.log("Email:", document.getElementById("email").value);
-                      console.log("Password:", document.getElementById("password").value);
-                    }}
-                  >
+                  <Link to="/test" >
+                  <button>
                     SIGN IN
                   </button>
+                  </Link>
                   <button className="register-button" onClick={() => {}}>
                     REGISTER
                   </button>

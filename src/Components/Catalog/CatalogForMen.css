@@ -273,6 +273,7 @@ img.fav-icon {
 img.fav-icon {
   width: 40px;
 }
+<<<<<<< HEAD
 
 .sticky-filter {
   position: -webkit-sticky;
@@ -284,3 +285,5 @@ img.fav-icon {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
+=======
+>>>>>>> 49a4dd7801c0d7327ef48bc9149556ef1f1f7c7e

@@ -6,6 +6,8 @@ import favoritedIcon from '../../../assets/icons/add-fav.svg';
 import { Link } from 'react-router-dom';
 import { productsData } from '../../productsData';
 import { CartContext } from '../../CartContext';
+import showFilters from "../../../assets/icons/show-filters.svg";
+import hideFilters from "../../../assets/icons/hide-filters.svg";
 
 const CatalogForMen = () => {
   const [minPrice, setMinPrice] = useState('');
@@ -23,7 +25,6 @@ const CatalogForMen = () => {
   const [showRemoveFavoriteMessage, setShowRemoveFavoriteMessage] = useState(false);
   const { favorites, addFavorite, isFavorite, removeFavorite } = useContext(FavoritesContext);
   const { cart, addCart, isInCart, removeCart } = useContext(CartContext);
-
 
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
   const colors = ['Red', 'Blue', 'Green', 'Black', 'White'];
@@ -144,7 +145,7 @@ const CatalogForMen = () => {
         </div>
       </div>
       <div className="catalog-layout">
-        <div className="filter-container">
+        <div className="filter-container sticky-filter">
           <h2 className='sort-head'>Sort by</h2>
           <button className="sort-buttons sort-buttons-price-sort hover-sort" onClick={() => setSortOrder('asc')}>Sort by price (min - high)</button>
           <button className="sort-buttons sort-buttons-price-sort" onClick={() => setSortOrder('desc')}>Sort by price (high - min)</button>
@@ -167,7 +168,10 @@ const CatalogForMen = () => {
             onWheel={(e) => e.target.blur()}
           />
           <h2 className='filters-head'>Filters</h2>
-          <button className="brand-button" onClick={handleBrandSearch}>Brand</button>
+          <button className="brand-button" onClick={handleBrandSearch}>
+            Brand
+            <img className="filters-icon" src={showBrands ? hideFilters : showFilters} alt="Toggle Filters" />
+          </button>
           {showBrands && (
             <div className="brand-list">
               {Array.from(new Set(productsData.map(product => product.brand))).map(brandItem => (
@@ -181,7 +185,10 @@ const CatalogForMen = () => {
               ))}
             </div>
           )}
-          <button className='brand-button' onClick={() => setShowSizes(!showSizes)}>Size</button>
+          <button className="brand-button" onClick={() => setShowSizes(!showSizes)}>
+            Size
+            <img className="filters-icon" src={showSizes ? hideFilters : showFilters} alt="Toggle Filters" />
+          </button>
           {showSizes && (
             <div className="brand-list">
               {sizes.map(size => (
@@ -191,7 +198,10 @@ const CatalogForMen = () => {
               ))}
             </div>
           )}
-          <button className='brand-button' onClick={() => setShowColors(!showColors)}>Colors</button>
+          <button className="brand-button" onClick={() => setShowColors(!showColors)}>
+            Colors
+            <img className="filters-icon" src={showColors ? hideFilters : showFilters} alt="Toggle Filters" />
+          </button>
           {showColors && (
             <div className="brand-list">
               {colors.map(color => (
@@ -201,7 +211,10 @@ const CatalogForMen = () => {
               ))}
             </div>
           )}
-          <button className='brand-button' onClick={() => setShowAvailability(!showAvailability)}>Availability</button>
+          <button className="brand-button" onClick={() => setShowAvailability(!showAvailability)}>
+            Availability
+            <img className="filters-icon" src={showAvailability ? hideFilters : showFilters} alt="Toggle Filters" />
+          </button>
           {showAvailability && (
             <div className="brand-list">
               {availability.map(item => (
@@ -217,7 +230,7 @@ const CatalogForMen = () => {
           {filteredProducts.map(product => (
             <div key={product.id} className="product-card">
               <Link to={`/catalog/men/product/${product.id}`}>
-                <img src={product.image} alt={`Product ${product.name}`} />
+                <img src={product.image} alt={`Product ${product.name}`} className="product-image" />
               </Link>
               <div className="price-type-product-card">
                 <p>{product.name}</p>
@@ -236,7 +249,11 @@ const CatalogForMen = () => {
           ))}
         </div>
       </div>
-
+      {showSuccessMessageCart && (
+        <div className="success-message">
+          Item added to cart!
+        </div>
+      )}
       {showFavoriteMessage && (
         <div className="success-message">
           Item added to favorites!
@@ -249,7 +266,7 @@ const CatalogForMen = () => {
       )}
       {showRemoveFavoriteMessage && (
         <div className="success-message">
-          Item removed from favorites
+          Item removed from favorites!
         </div>
       )}
     </>

@@ -128,8 +128,13 @@ input[type="number"]::-webkit-outer-spin-button {
   font-size: 25px;
   font-family: Sarpanch-Regular;
   cursor: pointer;
+  background-color: transparent;
 }
 
+.filters-icon {
+  height: 1vh;
+  margin-left: 10px;
+}
 
 .sort-buttons-price-sort:hover {
   background-color: #cfcbcb;
@@ -267,4 +272,15 @@ img.fav-icon {
 
 img.fav-icon {
   width: 40px;
+}
+
+.sticky-filter {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 70px; 
+  z-index: 1000; 
+  background-color: white; 
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }

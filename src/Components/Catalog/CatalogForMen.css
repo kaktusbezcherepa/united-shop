@@ -164,3 +164,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .brand-list div:hover {
   background-color: #ddd;
 }
+
+img.fav-icon {
+  width: 40px;
+}

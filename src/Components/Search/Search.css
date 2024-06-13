@@ -290,7 +290,7 @@
 
 .text-collection {
     position: absolute; 
-    left: 1323px; 
+    left: 1272px; 
     font-size: 80px;
     text-transform: uppercase;
     white-space: nowrap;
@@ -302,4 +302,18 @@
 
 .first-white-letter {
     color: white;
+}
+
+
+.image-container-under {
+    position: relative;
+}
+
+.under-container-main {
+    display: flex;
+    width: 100%; 
+    margin: 0; 
+    position: relative;
+    justify-content: space-between;
+    background-color:black
 }

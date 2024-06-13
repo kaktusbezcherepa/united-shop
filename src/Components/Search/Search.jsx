@@ -65,6 +65,13 @@ export const Search = () => {
           </div>
         </div>
       </div>
+      <div className="summer-coll-container">
+        <div className="summer-coll-text">summer</div>
+          <div className="summer-coll-info">
+          <div className="summer-coll-title">2024</div>
+        <button className="summer-coll-button">View collection</button>
+  </div>
+</div>
 
       <div className="blog-text">READ OUR BLOG POSTS</div>
 

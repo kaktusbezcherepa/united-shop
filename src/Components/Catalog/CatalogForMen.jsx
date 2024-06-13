@@ -7,9 +7,6 @@ import { Link } from 'react-router-dom';
 import { productsData } from '../../productsData';
 import { CartContext } from '../../CartContext';
 
-// Импортируем аудиофайл
-import backgroundMusic from '../../../assets/audio/operationSas.mp3';
-
 const CatalogForMen = () => {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
@@ -121,18 +118,6 @@ const CatalogForMen = () => {
 
     return () => clearTimeout(timeoutId);
   }, [showRemoveFavoriteMessage]);
-
-  useEffect(() => {
-    const audio = new Audio(backgroundMusic);
-    audio.volume = 0.5; // Установите громкость по вашему усмотрению
-    audio.loop = true; // Чтобы музыка повторялась автоматически
-    audio.play();
-
-    return () => {
-      audio.pause();
-      audio.currentTime = 0;
-    };
-  }, []);
 
   return (
     <>

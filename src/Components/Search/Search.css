@@ -277,15 +277,31 @@
 
 .text-collection-main {
     position: absolute;
-    bottom: 20px; /* Adjust vertical position */
-    right: 20px; /* Adjust horizontal position */
+    bottom: 20px; 
+    right: 20px; 
     font-size: 100px;
     text-transform: uppercase;
-    white-space: nowrap; /* Prevent line breaks */
+    white-space: nowrap; 
     top: 100px;
 }
 
 .limited,
 .collection {
-  display: block; /* Place each word on a separate line */
+  display: block; 
+}
+
+.text-collection {
+    position: absolute; 
+    left: 1323px; 
+    font-size: 80px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    bottom: 500px;
+    text-align: end;
+    z-index: 1000;
+    font-family: Sarpanch-Bold;
+}
+
+.first-white-letter {
+    color: white;
 }

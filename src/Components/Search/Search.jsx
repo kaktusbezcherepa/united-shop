@@ -49,16 +49,21 @@ export const Search = () => {
       <div className="models">
         <div className="image-container">
         <img src={Man} alt="Man" />
+        <div className="text-collection">
+          <div className="limited">limited</div> 
+          <div className="collection"><span className="first-white-letter">C</span>ollection</div>
+          <Link to="/catalog" ><button className="button-models catalog">
+       View collection
+      </button>
+       </Link> 
+        </div>
+        
       </div>
         <div className="image-container">
           <img src={Women} alt="Women" />
+          <div className="text-collection">
+          </div>
         </div>
-        <div className="text-collection-main">limited Collection</div>
-        <div className="text-collection-main">Collection</div>
-        </div>
-      <div className="summer-collection">
-        <h1>summer</h1> 
-        <p>collection</p>
       </div>
 
       <div className="blog-text">READ OUR BLOG POSTS</div>

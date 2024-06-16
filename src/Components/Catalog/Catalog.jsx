@@ -8,6 +8,7 @@ import { MainCatalog } from "../../Data/MainCatalog";
 import { CartContext } from '../../CartContext';
 import showFilters from "../../../assets/icons/show-filters.svg";
 import hideFilters from "../../../assets/icons/hide-filters.svg";
+import "./Catalog.css"
 
 export const Catalog = () => {
   const [minPrice, setMinPrice] = useState('');
@@ -146,12 +147,11 @@ export const Catalog = () => {
 
   return (
     <>
-      <div className="summer-collection-men">
-        <div className="summer-collection-men-text">
-          <h1>Summer Collection</h1>
-          <h2 className='year-god'>2024</h2>
+      <div className="catalog-main-img">
+          <div className='catalog-main-img-text'>Sale</div>
+          <div className='catalog-main-img-text2'>up to</div>
+          <div className='catalog-main-img-text3'>60%</div>
         </div>
-      </div>
       <div className="catalog-layout">
         <div className="filter-container sticky-filter">
           <h2 className='sort-head'>Sort by</h2>

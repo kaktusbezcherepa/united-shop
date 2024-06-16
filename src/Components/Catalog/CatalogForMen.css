@@ -287,3 +287,30 @@ img.fav-icon {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
+
+
+.limited-hehe-imgaes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.one-limited-image {
+  background: url("../../../assets/background/first-limited.png");
+}
+
+.two-limited-image {
+  background: url("../../../assets/background/two-limeted.png");
+}
+
+.three-limited-image {
+  background: url("../../../assets/background/thrid-limited.png");
+}
+
+.limited-imge {
+  width: 30%;
+  height: auto;
+  background-size: cover;
+  margin: 0 10px;
+}

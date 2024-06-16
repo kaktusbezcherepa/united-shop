@@ -146,7 +146,7 @@ export const Catalog = () => {
 
   return (
     <>
-      <div className="summer-collection-men">
+      <div className="summer-collection-men-men">
         <div className="summer-collection-men-text">
           <h1>Summer Collection</h1>
           <h2 className='year-god'>2024</h2>

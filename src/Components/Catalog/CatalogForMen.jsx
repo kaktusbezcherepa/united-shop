@@ -146,12 +146,12 @@ const CatalogForMen = () => {
 
   return (
     <>
-      <div className="summer-collection-men">
-        <div className="summer-collection-men-text">
-          <h1>Summer Collection</h1>
-          <h2 className='year-god'>2024</h2>
+        <div className='limited-hehe-imgaes'>
+          <div className='one-limited-image'></div>
         </div>
-      </div>
+
+
+
       <div className="catalog-layout">
         <div className="filter-container sticky-filter">
           <h2 className='sort-head'>Sort by</h2>

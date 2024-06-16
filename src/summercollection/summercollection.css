@@ -11,24 +11,32 @@
 
 
 .new-summer-card-text {
+    position: absolute;
+    font-size: 140px;
     font-family: MuseoModerno;
-    font-size: 75px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    left: 370px;
+    top: 100px;
     color: white;
     text-transform: uppercase;
 }
 
 .new-summer-card-text-first {
-    color: red;
+    position: absolute;
+    font-size: 140px;
     font-family: MuseoModerno;
-    font-size: 75px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    left: 180px;
+    top: 100px;
+    color: #E05F64;
     text-transform: uppercase;
 }
 
+
+.new-summer-card-text-24 {
+    position: absolute;
+    font-size: 140px;
+    font-family: MuseoModerno;
+    left: 1530px;
+    top: 300px;
+    color: #E05F64;
+    text-transform: uppercase;
+}

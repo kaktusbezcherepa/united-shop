@@ -147,12 +147,10 @@ const Summercollection = () => {
 
   return (
     <>
-      <div className="new-summer-card">
-        <div className="new-summer-card-text">
-          <div>Summer Collection</div>
-          <div>2024</div>
-        </div>
-      </div>
+      <div className="new-summer-card"></div>
+          <div className='new-summer-card-text-first'>Su</div>
+          <div className='new-summer-card-text'>mmer</div>
+          <div className='new-summer-card-text-24'>24</div>
       <div className="catalog-layout">
         <div className="filter-container sticky-filter">
           <h2 className='sort-head'>Sort by</h2>

@@ -290,22 +290,24 @@ img.fav-icon {
 
 
 .limited-hehe-imgaes {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  height: 1000px;
+  background-size: cover;
 }
 
 .one-limited-image {
-  background: url("../../../assets/background/first-limited.png");
+  background: url("../../../assets/background/first-limited.png") no-repeat;
 }
 
 .two-limited-image {
-  background: url("../../../assets/background/two-limeted.png");
+  background: url("../../../assets/background/two-limeted.png") no-repeat;
 }
 
 .three-limited-image {
-  background: url("../../../assets/background/thrid-limited.png");
+  background: url("../../../assets/background/thrid-limited.png") no-repeat;
 }
 
 .limited-imge {

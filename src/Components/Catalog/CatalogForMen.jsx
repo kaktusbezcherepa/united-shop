@@ -146,12 +146,12 @@ const CatalogForMen = () => {
 
   return (
     <>
-        <div className='limited-hehe-imgaes'>
-          <div className='one-limited-image'></div>
-        </div>
-
-
-
+    <div className="test"></div>
+      <div className='limited-photos'>
+        <div className="limited-photo-1"></div>
+        <div className="limited-photo-2"><h2 className='limited-text-img'>limited</h2></div>
+        <div className="limited-photo-3"></div>
+      </div>
       <div className="catalog-layout">
         <div className="filter-container sticky-filter">
           <h2 className='sort-head'>Sort by</h2>

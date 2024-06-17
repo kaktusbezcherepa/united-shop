@@ -14,7 +14,7 @@
 
 .modal {
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: -400px; /* Начальное положение за пределами экрана */
     top: 40%;
     transform: translateY(-50%);
@@ -144,6 +144,25 @@
 
 .header-button:hover {
     cursor: pointer;
+}
+
+.modal-categories-list {
+    font-family: Sarpanch-Regular;
+    font-size: 30px;
+}
+
+.modal-categories-list :visited {
+    text-decoration: none;
+    color: black;
+} 
+
+.modal-categories-list :active {
+    text-decoration: none;
+    color: black;
+}
+
+.modal-info {
+    margin-top: 30px;
 }
 
 @keyframes slideIn {

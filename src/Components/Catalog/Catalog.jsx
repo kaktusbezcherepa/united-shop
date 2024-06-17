@@ -147,7 +147,8 @@ export const Catalog = () => {
 
   return (
     <>
-      <div className="catalog-main-img">
+    <div className="test"></div>
+      <div className="summer-collection-men-men">
           <div className='catalog-main-img-text'>Sale</div>
           <div className='catalog-main-img-text2'>up to</div>
           <div className='catalog-main-img-text3'>60%</div>

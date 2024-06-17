@@ -25,8 +25,11 @@ function Header() {
         <div className="modal">
           <div className="modal-content">
           <button className="exit-button"onClick={toggleModal}><img className="exit-button-size"src={Exit} alt="" /></button>
-            <p>test</p>
-            <p>test</p>
+          <div className="modal-info">
+                <h3 className="modal-categories-list"><Link to="/catalog">Default Catalog</Link></h3>
+                <h3 className="modal-categories-list"><Link to="/catalog/men">Limited edition</Link></h3>
+                <h3 className="modal-categories-list"><Link to="/summercollection">Summer Collection</Link></h3>
+          </div>
           </div>
         </div>
       )}

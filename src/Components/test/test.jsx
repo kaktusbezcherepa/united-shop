@@ -19,10 +19,29 @@ export const Test = () => {
   // Функция для обновления состояния при изменении данных в полях ввода
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+
+    if (name === "dateOfBirth") { // Handle date input specifically
+      // Remove non-digit characters
+      let newValue = value.replace(/[^0-9]/g, ''); 
+
+      // Add dots only after 2 and 5 digits
+      if (newValue.length > 2) {
+        newValue = newValue.replace(/(\d{2})(\d)/, '$1.$2');
+      }
+      if (newValue.length > 5) {
+        newValue = newValue.replace(/(\d{2}.\d{2})(\d)/, '$1.$2');
+      }
+
+      setFormData({
+        ...formData,
+        dateOfBirth: newValue
+      });
+    } else { // Handle other inputs normally
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
   };
 
   // Функция для обработки изменения выбора пола
@@ -69,20 +88,26 @@ export const Test = () => {
           </div>
           <div className="input-fields">
             <h3 className='field-name'>Date of birth</h3>
-            <input className='input-field' type="text" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleInputChange} />
+            <input className='input-field' type="text" name="dateOfBirth" 
+                   value={formData.dateOfBirth} 
+                   onChange={handleInputChange} />
           </div>
           <div className="input-fields">
             <h3 className='field-name'>Sex</h3>
             <div className='sex-varios'>
               <label>
                 Male
-                <input type="radio" name="sex" value="Male" className="custom-radio" checked={formData.sex === 'Male'} onChange={handleGenderChange} />
+                <input type="radio" name="sex" value="Male" className="custom-radio" 
+                       checked={formData.sex === 'Male'} 
+                       onChange={handleGenderChange} />
               </label>
             </div>
             <div className='sex-varios'>
               <label>
                 Female
-                <input type="radio" name="sex" value="Female" className="custom-radio" checked={formData.sex === 'Female'} onChange={handleGenderChange} />
+                <input type="radio" name="sex" value="Female" className="custom-radio" 
+                       checked={formData.sex === 'Female'} 
+                       onChange={handleGenderChange} />
               </label>
             </div>
           </div>

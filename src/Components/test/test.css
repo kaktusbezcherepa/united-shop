@@ -118,6 +118,7 @@
   border: 2px solid #ccc; 
   cursor: pointer; 
   outline: none;
+  margin-left: 20px;
 }
 
 .custom-radio:checked {

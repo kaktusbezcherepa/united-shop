@@ -1,0 +1,42 @@
+.new-summer-card {
+    background:  url("../../../assets/background/summermain.png") no-repeat center center;
+    width: 100%;
+    height: 600px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    position: relative;
+}
+
+
+.new-summer-card-text {
+    position: absolute;
+    font-size: 140px;
+    font-family: MuseoModerno;
+    left: 370px;
+    top: 100px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.new-summer-card-text-first {
+    position: absolute;
+    font-size: 140px;
+    font-family: MuseoModerno;
+    left: 180px;
+    top: 100px;
+    color: #E05F64;
+    text-transform: uppercase;
+}
+
+
+.new-summer-card-text-24 {
+    position: absolute;
+    font-size: 140px;
+    font-family: MuseoModerno;
+    left: 1530px;
+    top: 300px;
+    color: #E05F64;
+    text-transform: uppercase;
+}

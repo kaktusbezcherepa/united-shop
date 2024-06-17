@@ -8,6 +8,7 @@ import { WomenSummerData } from '../Data/SummerCollection';
 import { CartContext } from '../CartContext';
 import showFilters from "../../assets/icons/show-filters.svg";
 import hideFilters from "../../assets/icons/hide-filters.svg";
+import "./summercollection.css"
 
 const Summercollection = () => {
   const [minPrice, setMinPrice] = useState('');
@@ -146,12 +147,10 @@ const Summercollection = () => {
 
   return (
     <>
-      <div className="summer-collection-men">
-        <div className="summer-collection-men-text">
-          <h1>Summer Collection</h1>
-          <h2 className='year-god'>2024</h2>
-        </div>
-      </div>
+      <div className="new-summer-card"></div>
+          <div className='new-summer-card-text-first'>Su</div>
+          <div className='new-summer-card-text'>mmer</div>
+          <div className='new-summer-card-text-24'>24</div>
       <div className="catalog-layout">
         <div className="filter-container sticky-filter">
           <h2 className='sort-head'>Sort by</h2>

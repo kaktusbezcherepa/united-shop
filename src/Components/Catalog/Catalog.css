@@ -4,6 +4,32 @@
     justify-content: center;
     width: 100%;
     height: 900px;
-    background: url("../../../assets/background/back-main-coll.png") no-repeat center center;
     background-size: cover;
-  }
+}
+
+.catalog-main-img-text {
+    position: absolute;
+    font-size: 140px;
+    font-family: MuseoModerno;
+    left: 500px;
+    top: 250px;
+    color: white;
+}
+
+.catalog-main-img-text2 {
+    position: absolute;
+    font-size: 80px;
+    font-family: MuseoModerno;
+    left: 650px;
+    top: 400px;
+    color: white;
+}
+
+.catalog-main-img-text3 {
+    position: absolute;
+    font-size: 150px;
+    font-family: MuseoModerno;
+    left: 600px;
+    top: 475px;
+    color: white;
+}

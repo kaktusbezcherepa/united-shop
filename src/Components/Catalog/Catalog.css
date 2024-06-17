@@ -1,4 +1,5 @@
 .summer-collection-men-men {
+    background: url("../../../assets/background/maincatalog2.png") no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,4 +33,8 @@
     left: 600px;
     top: 475px;
     color: white;
+}
+
+.catalog-main-img {
+    background: url("../../../assets/background/maincatalog2.png") no-repeat;
 }

@@ -9,18 +9,18 @@ import { Search } from './Components/Search/Search';
 import { Cart } from './Components/Cart/Cart';
 import { Profile } from './Components/Profile/Profile';
 import { Catalog } from './Components/Catalog/Catalog';
-import  CatalogForMen  from './Components/Catalog/CatalogForMen';
-import { FavoritesProvider } from './FavContext'; 
-import  ProductDetails from "./Components/ProductCard/ProductDetails"
+import CatalogForMen from './Components/Catalog/CatalogForMen';
+import { FavoritesProvider } from './FavContext';
+import ProductDetails from "./Components/ProductCard/ProductDetails"
 import { WomenSummerData } from './Data/SummerCollection';
 import { MainCatalog } from './Data/MainCatalog';
 import { LimitedData } from './Data/LimitedData';
 import { CartProvider } from './CartContext';
+import { OrderProvider } from './OrderContext';
 import Test from './Components/test/test';
 import Clubcard from './Components/clubcard/clubcard';
 import Orders from './Components/orders/orders';
 import Summercollection from './summercollection/summercollection';
-
 
 export const App = () => {
   // Функция для отправки запроса на сервер для отправки электронной почты
@@ -34,8 +34,8 @@ export const App = () => {
     } catch (error) {
       console.error('Error sending email:', error);
     }
-
   };
+
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -44,24 +44,26 @@ export const App = () => {
   return (
     <div>
       <FavoritesProvider>
-        <CartProvider> 
-          <Header />
-          <Routes>
-            <Route path="/" element={<Search />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/favorites" element={<Fav />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/catalog" element={<Catalog />} />
-            <Route path="/catalog/men" element={<CatalogForMen />} />
-            <Route path="/limited-catalog/product/:productId" element={<ProductDetails data={LimitedData} />} />
-            <Route path="/main-catalog/product/:productId" element={<ProductDetails data={MainCatalog} />} />
-            <Route path="/summer-collection/product/:productId" element={<ProductDetails data={WomenSummerData} />}/>
-            <Route path="/test" element={<Test />} />
-            <Route path="/clubcard" element={<Clubcard />} />
-            <Route path="/orders" element={<Orders />} />
-            <Route path="/summercollection" element={<Summercollection />} />
-          </Routes>
-          <Footer />
+        <CartProvider>
+          <OrderProvider>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Search />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/favorites" element={<Fav />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/catalog" element={<Catalog />} />
+              <Route path="/catalog/men" element={<CatalogForMen />} />
+              <Route path="/limited-catalog/product/:productId" element={<ProductDetails data={LimitedData} />} />
+              <Route path="/main-catalog/product/:productId" element={<ProductDetails data={MainCatalog} />} />
+              <Route path="/summer-collection/product/:productId" element={<ProductDetails data={WomenSummerData} />}/>
+              <Route path="/test" element={<Test />} />
+              <Route path="/clubcard" element={<Clubcard />} />
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/summercollection" element={<Summercollection />} />
+            </Routes>
+            <Footer />
+          </OrderProvider>
         </CartProvider>
       </FavoritesProvider>
     </div>

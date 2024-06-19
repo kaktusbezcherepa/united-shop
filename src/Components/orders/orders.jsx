@@ -23,7 +23,7 @@ export const Orders = () => {
         </div>
         <div className="buttons-profile3">
           <p className='profile-swap-win-button'>
-            <Link to="/clubcard" style={{ textDecoration: "none" }}>club cars</Link>
+            <Link to="/clubcard" style={{ textDecoration: "none" }}>club card</Link>
           </p>
         </div>
       </div>

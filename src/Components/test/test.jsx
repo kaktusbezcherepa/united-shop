@@ -32,6 +32,11 @@ export const Test = () => {
         newValue = newValue.replace(/(\d{2}.\d{2})(\d)/, '$1.$2');
       }
 
+      // Limit year to 4 digits
+      if (newValue.length > 10) {
+        newValue = newValue.substring(0, 10); 
+      }
+
       setFormData({
         ...formData,
         dateOfBirth: newValue
@@ -90,7 +95,8 @@ export const Test = () => {
             <h3 className='field-name'>Date of birth</h3>
             <input className='input-field' type="text" name="dateOfBirth" 
                    value={formData.dateOfBirth} 
-                   onChange={handleInputChange} />
+                   onChange={handleInputChange}
+                   placeholder='DD.MM.YYYY' />
           </div>
           <div className="input-fields">
             <h3 className='field-name'>Sex</h3>

@@ -11,7 +11,7 @@ export const Clubcard = () => {
                 <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/test"} style={{ textDecoration: 'none' }}>my data</Link></p></div>
                 <div className="buttons-profile3"><p className='profile-swap-win-button'><Link to={"/orders"} style={{ textDecoration: 'none' }}>orders</Link></p></div>
                 <div className="buttons-profile3"><p className='custom-varrior-button'>club card</p></div>
-        </div>
+                </div>
         <div className="clubcard-container">
           <div className="clubcard"></div>
         </div>

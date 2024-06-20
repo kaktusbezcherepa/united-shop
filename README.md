@@ -1,1 +1,0 @@
-https://www.figma.com/design/bJleoFr9v4uNItPgYceUNW/Sigma-Project?node-id=0-1&t=7f11FAQz0y26aUK3-1

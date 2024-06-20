@@ -18,8 +18,8 @@
     top: 100px;
     color: white;
     text-transform: uppercase;
-    opacity: 0; /* Начальная прозрачность для анимации появления */
-    animation: fadeIn 1s forwards; /* Анимация появления с продолжительностью 1 секунда */
+    opacity: 0; 
+    animation: fadeIn 1s forwards; 
 }
 
 .new-summer-card-text-first {

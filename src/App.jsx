@@ -8,8 +8,8 @@ import { Fav } from './Components/Fav/Fav';
 import { Search } from './Components/Search/Search';
 import { Cart } from './Components/Cart/Cart';
 import { Profile } from './Components/Profile/Profile';
-import { Catalog } from './Components/Catalog/Catalog';
-import CatalogForMen from './Components/Catalog/CatalogForMen';
+import { Catalog } from './Components/Catalog/MainCatalog';
+import CatalogForMen from './Components/Catalog/LimitedCollection';
 import { FavoritesProvider } from './FavContext';
 import ProductDetails from "./Components/ProductCard/ProductDetails"
 import { WomenSummerData } from './Data/SummerCollection';
@@ -18,9 +18,9 @@ import { LimitedData } from './Data/LimitedData';
 import { CartProvider } from './CartContext';
 import { OrderProvider } from './OrderContext';
 import Test from './Components/test/test';
-import Clubcard from './Components/clubcard/clubcard';
-import Orders from './Components/orders/orders';
-import Summercollection from './summercollection/summercollection';
+import Clubcard from './Components/ClubCard/ClubCard';
+import Orders from './Components/Orders/Orders';
+import Summercollection from './Components/Catalog/SummerCollection';
 
 export const App = () => {
   // Функция для отправки запроса на сервер для отправки электронной почты

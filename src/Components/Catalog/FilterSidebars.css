@@ -4,92 +4,21 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
-
 @keyframes fadeInOut {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+@keyframes fadeInUp {
   0% {
-    opacity: 0.7;
+    opacity: 0;
+    transform: translateY(20px);
   }
-  50% {
+  100% {
     opacity: 1;
+    transform: translateY(0);
   }
-  100% {
-    opacity: 0.7;
-  }
-}
-
-.limited-photos {
-  width: 100%;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  margin-bottom: 150px;
-  gap: 40px;
-}
-
-.limited-text-img {
-  font-size: 100px;
-  color: white;
-  text-transform: uppercase;
-  font-family: Sarpanch-Bold;
-  text-align: center;
-  margin-top: 115%;
-}
-
-.limited-photo-1 {
-  width: 25%;
-  height: 70vh;
-  background-image: url("../../../assets/background/first-limited.png");
-  background-size: cover;
-  
-}
-
-.limited-photo-2 {
-  width: 25%;
-  height: 70vh;
-  background-image: url("../../../assets/background/two-limeted.png");
-  background-size: cover;
-}
-
-.limited-photo-3 {
-  width: 25%;
-  height: 70vh;
-  background-image: url("../../../assets/background/thrid-limited.png");
-  background-size: cover;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(0.9);
-  }
-}
-@keyframes colorChange {
-  0% {
-    color: white;
-  }
-  50% {
-    color: rgb(127, 255, 255); 
-  }
-  100% {
-    color: white;
-  }
-}
-
-.year-god {
-  font-size: 60px;
-  animation: colorChange 5s ease-in-out infinite;
-  animation: pulse 5s infinite alternate;
-}
-
-.summer-collection-men-text h1 {
-  font-size: 100px;
 }
 
 .catalog-layout {
@@ -108,35 +37,20 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-right: 20px;
   animation: fadeInUp 0.5s ease forwards;
 }
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-.sort-head {
-  font-family: Sarpanch-Regular;
-  text-align: center;
-}
-
-.filters-head {
+.sort-head, .filters-head {
   font-family: Sarpanch-Regular;
   text-align: center;
 }
 
 .sort-buttons {
-    font-family: Sarpanch-Regular;
-    background-color: black;
-    color: white;
-    height: 40px;
-    width: 100%;
-    border: none;
-    cursor: pointer;
+  font-family: Sarpanch-Regular;
+  background-color: black;
+  color: white;
+  height: 40px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
 }
 
 .sort-buttons:hover {
@@ -147,6 +61,10 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: white;
   color: black;
   width: 280px;
+}
+
+.sort-buttons-price-sort:hover {
+  background-color: #cfcbcb;
 }
 
 .brand-button {
@@ -162,10 +80,6 @@ input[type="number"]::-webkit-outer-spin-button {
 .filters-icon {
   height: 1vh;
   margin-left: 10px;
-}
-
-.sort-buttons-price-sort:hover {
-  background-color: #cfcbcb;
 }
 
 .input-filter {
@@ -191,7 +105,6 @@ input[type="number"]::-webkit-outer-spin-button {
   font-family: Sarpanch-Regular;
   background-color: black;
   color: white;
-  position: relative;
   border: 1px solid black;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -203,15 +116,13 @@ input[type="number"]::-webkit-outer-spin-button {
   display: block;
   transition: transform 0.3s ease;
 }
+
 .product-card:hover {
   transform: translateY(-10px);
 }
 
 .product-card:hover img {
   transform: scale(1.05);
-}
-img.fav-icon {
-  width: 30px;
 }
 
 .price-type-product-card {
@@ -231,7 +142,7 @@ img.fav-icon {
 }
 
 .fav-icon {
-  height: 20vh;
+  width: 2vw;
   cursor: pointer;
 }
 
@@ -248,7 +159,7 @@ img.fav-icon {
 }
 
 .add-to-cart {
-    font-family: Sarpanch-Regular;
+  font-family: Sarpanch-Regular;
   background-color: white;
   color: black;
   border: none;
@@ -257,7 +168,6 @@ img.fav-icon {
   border-radius: 5px;
   font-size: 20px;
 }
-
 
 .add-to-cart:hover {
   background-color: #777;
@@ -272,7 +182,7 @@ img.fav-icon {
   background-color: #f9f9f9;
   border-radius: 5px;
   max-height: 200px;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .brand-item {
@@ -290,23 +200,7 @@ img.fav-icon {
   color: rgb(0, 0, 0);
 }
 
-.brand-list div {
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 3px;
-}
-
-.brand-list div:hover {
-  background-color: #ddd;
-}
-
-img.fav-icon {
-  width: 50px;
-  height: 50px;
-}
-
 .sticky-filter {
-  position: -webkit-sticky;
   position: sticky;
   top: 70px; 
   z-index: 2; 
@@ -314,33 +208,4 @@ img.fav-icon {
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-}
-
-
-.limited-hehe-imgaes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1000px;
-  height: 1000px;
-  background-size: cover;
-}
-
-.one-limited-image {
-  background: url("../../../assets/background/first-limited.png") no-repeat;
-}
-
-.two-limited-image {
-  background: url("../../../assets/background/two-limeted.png") no-repeat;
-}
-
-.three-limited-image {
-  background: url("../../../assets/background/thrid-limited.png") no-repeat;
-}
-
-.limited-imge {
-  width: 30%;
-  height: auto;
-  background-size: cover;
-  margin: 0 10px;
 }

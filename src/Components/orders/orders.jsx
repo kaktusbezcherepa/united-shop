@@ -1,7 +1,7 @@
 // src/components/Orders/Orders.jsx
 import { useContext } from "react";
 import { OrderContext } from "../../OrderContext";
-import "./orders.css";
+import "./Orders.css";
 import { Link } from "react-router-dom";
 
 export const Orders = () => {

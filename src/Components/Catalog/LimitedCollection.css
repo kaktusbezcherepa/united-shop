@@ -1,0 +1,101 @@
+.limited-photos {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  gap: 40px;
+}
+
+.limited-text-img {
+  font-size: 100px;
+  color: white;
+  text-transform: uppercase;
+  font-family: Sarpanch-Bold;
+  text-align: center;
+  margin-top: 115%;
+}
+
+.limited-photo-1 {
+  width: 25%;
+  height: 70vh;
+  background-image: url("../../../assets/background/first-limited.png");
+  background-size: cover;
+}
+
+.limited-photo-2 {
+  width: 25%;
+  height: 70vh;
+  background-image: url("../../../assets/background/two-limeted.png");
+  background-size: cover;
+}
+
+.limited-photo-3 {
+  width: 25%;
+  height: 70vh;
+  background-image: url("../../../assets/background/thrid-limited.png");
+  background-size: cover;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: white;
+  }
+  50% {
+    color: rgb(127, 255, 255); 
+  }
+  100% {
+    color: white;
+  }
+}
+
+.year-god {
+  font-size: 60px;
+  animation: colorChange 5s ease-in-out infinite, pulse 5s infinite alternate;
+}
+
+.summer-collection-men-text h1 {
+  font-size: 100px;
+}
+
+.limited-hehe-imgaes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  height: 1000px;
+  background-size: cover;
+}
+
+.one-limited-image {
+  background: url("../../../assets/background/first-limited.png") no-repeat;
+}
+
+.two-limited-image {
+  background: url("../../../assets/background/two-limeted.png") no-repeat;
+}
+
+.three-limited-image {
+  background: url("../../../assets/background/thrid-limited.png") no-repeat;
+}
+
+.limited-imge {
+  width: 30%;
+  height: auto;
+  background-size: cover;
+  margin: 0 10px;
+}
